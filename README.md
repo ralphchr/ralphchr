@@ -1,7 +1,5 @@
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-banner-mobile.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-banner.svg">
-  <source media="(max-width: 600px)" srcset="./assets/profile-banner-mobile.gif">
   <img src="./assets/profile-banner.gif" alt="RC_ — Always Becoming, Always Building. A creative mind. A problem-solving spirit." width="100%">
 </picture>
 
@@ -14,49 +12,9 @@ My interests move between software development, design, AI, games, and cybersecu
 ## `01 /` Selected work
 
 <picture>
-  <source media="(max-width: 600px)" srcset="./assets/projects/relaya-mobile.png">
-  <img src="./assets/projects/relaya.png" alt="RELAYA — original project logo" width="100%">
+  <source media="(max-width: 600px)" srcset="./assets/project-index-mobile.svg">
+  <img src="./assets/project-index.svg" alt="RELAYA — Communication and AI; approach: AI, speech recognition, NLP. TUGONEX — Healthcare; React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — Community; HTML, CSS, JavaScript." width="100%">
 </picture>
-
-A real-time assistant that turns mixed Filipino/Bisaya-English speech into clear English, with intent reconstruction, Context Guard, and user-controlled speech delivery.
-
-**Approach:** `AI` · `Speech recognition` · `NLP`
-
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/projects/tugonex-mobile.png">
-  <img src="./assets/projects/tugonex.png" alt="TUGONEX — original project logo" width="100%">
-</picture>
-
-An offline-first hospital queue app with local syncing during outages and calamities, plus AI-assisted consultation and doctor referral.
-
-**Stack:** `React` · `TypeScript` · `Tailwind CSS`
-
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/projects/albularyo-mobile.png">
-  <img src="./assets/projects/albularyo.png" alt="Albularyo’s Apprentice — supplied title screen" width="100%">
-</picture>
-
-A merchant simulation where players brew potions, set prices, and manage supplies.
-
-**Stack:** `Godot 4` · `C++` · `GDExtension`
-
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/projects/upocalyse-mobile.png">
-  <img src="./assets/projects/upocalyse.png" alt="Upocalypse Control — main menu screen" width="100%">
-</picture>
-
-A disaster-response city-builder with a procedural coastal barangay map, evacuation planning, and five disaster simulations.
-
-**Stack:** `Godot 4` · `C++` · `GDExtension`
-
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/projects/ehaw-mobile.png">
-  <img src="./assets/projects/ehaw.png" alt="E-HAW — supplied project image" width="100%">
-</picture>
-
-A responsive barangay assistance site for a UP Cebu NSTP-C project, bringing emergency reporting, ticket tracking, and community alerts together.
-
-**Stack:** `HTML` · `CSS` · `JavaScript`
 
 ## `02 /` Toolkit
 
@@ -123,16 +81,24 @@ A responsive barangay assistance site for a UP Cebu NSTP-C project, bringing eme
 
 ## `03 /` On GitHub
 
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/contributions-mobile.svg">
-  <img src="./assets/contributions.svg" alt="GitHub contribution calendar for @ralphchr, based on real counts from my public profile" width="100%">
-</picture>
+<h3 align="center">Consistency</h3>
 
-[View my GitHub activity ↗](https://github.com/ralphchr?tab=overview)
+<p align="center">
+  <a href="https://github.com/ralphchr">
+    <img src="https://streak-stats.demolab.com/?user=ralphchr&amp;mode=weekly&amp;background=09090F&amp;ring=8B5CF6&amp;fire=8EBBEE&amp;currStreakNum=F0E9DD&amp;sideNums=F0E9DD&amp;currStreakLabel=8EBBEE&amp;sideLabels=C5C6D0&amp;dates=C5C6D0&amp;stroke=242633&amp;hide_border=true&amp;disable_animations=true" alt="ralphchr’s total contributions, current weekly streak, and longest weekly streak" width="500">
+  </a>
+</p>
+
+<h3 align="center">Git Activity</h3>
+
+<picture>
+  <source media="(max-width: 600px)" srcset="./assets/activity-mobile.svg">
+  <img src="./assets/activity.svg" alt="ralphchr’s GitHub contribution activity over the last 31 days" width="100%">
+</picture>
 
 ## `04 /` Beyond the code
 
-I’m a **Marketing Director at the UP Computer Science Guild**, a **seasonal tutor**, a **freelance graphic designer**, and a **gamer**.
+I’m the **Marketing Director at the UP Computer Science Guild**, a **Seasonal Tutor**, a **Freelance Graphic Designer**, and a **Competitive Gamer**.
 
 ## `05 /` Let’s connect
 
