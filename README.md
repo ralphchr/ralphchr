@@ -98,7 +98,7 @@ My interests move between software development, design, AI, games, and cybersecu
 
 ## `04 /` Beyond the code
 
-I’m the **Marketing Director at the UP Computer Science Guild**, a **Seasonal Tutor**, a **Freelance Graphic Designer**, and a **Competitive Gamer**.
+I’m the **Marketing Director of the UP Computer Science Guild**, a **Seasonal Tutor**, a **Freelance Graphic Designer**, and a **Competitive Gamer**.
 
 ## `05 /` Let’s connect
 
