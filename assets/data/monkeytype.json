@@ -1,0 +1,24 @@
+{
+  "username": "ralphchr",
+  "profile": "https://monkeytype.com/profile/ralphchr",
+  "source": "https://api.monkeytype.com/users/ralphchr/profile",
+  "updated": "2026-10-31",
+  "completedTests": 13,
+  "startedTests": 27,
+  "timeTyping": 353.5899999999999,
+  "mode": "English / normal / no punctuation or numbers",
+  "personalBests": [
+    {
+      "seconds": 15,
+      "wpm": 121.58,
+      "accuracy": 100,
+      "consistency": 83.94
+    },
+    {
+      "seconds": 30,
+      "wpm": 104.78,
+      "accuracy": 96.72,
+      "consistency": 76.22
+    }
+  ]
+}
