@@ -13,8 +13,10 @@ My interests move between software development, design, AI, games, and cybersecu
 
 <picture>
   <source media="(max-width: 600px)" srcset="./assets/project-index-mobile.svg">
-  <img src="./assets/project-index.svg" alt="RELAYA — Communication and AI; approach: AI, speech recognition, NLP. TUGONEX — Healthcare; React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — Community; HTML, CSS, JavaScript." width="100%">
+  <img src="./assets/project-index.svg" alt="RELAYA — Communication and AI; approach: AI, speech recognition, NLP. LazyFill — Google Forms autofill extension; React, TypeScript, Manifest V3. TUGONEX — Healthcare; React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — Community; HTML, CSS, JavaScript." width="100%">
 </picture>
+
+[Explore LazyFill](https://github.com/ralphchr/LazyFill) — Preview questions and autofill multi-section Google Forms with reusable placeholders.
 
 ## `02 /` Toolkit
 
