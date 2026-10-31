@@ -1,107 +1,184 @@
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-banner.svg">
-  <img src="./assets/profile-banner.gif" alt="RC_ — Always Becoming, Always Building. A creative mind. A problem-solving spirit." width="100%">
-</picture>
-
-# Ralph Christian Borbon
-
-I’m Ralph, a **Computer Science student at UP Cebu**, based in **Cebu, Philippines**. I write code, shape visual identities, and build interactive experiences.
-
-My interests move between software development, design, AI, games, and cybersecurity. I’m drawn to work that connects those worlds: a clearer conversation, a more prepared community, or a game worth exploring.
-
-## `01 /` Selected work
-
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/project-index-mobile.svg">
-  <img src="./assets/project-index.svg" alt="RELAYA — Communication and AI; approach: AI, speech recognition, NLP. LazyFill — Google Forms autofill extension; React, TypeScript, Manifest V3. TUGONEX — Healthcare; React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — Community; HTML, CSS, JavaScript." width="100%">
-</picture>
-
-[Explore LazyFill](https://github.com/ralphchr/LazyFill) — Preview questions and autofill multi-section Google Forms with reusable placeholders.
-
-## `02 /` Toolkit
-
-### Languages
-
 <p>
-  <img src="./assets/stack/c.svg" alt="C" title="C" width="36" height="36">
-  <img src="./assets/stack/cplusplus.svg" alt="C++" title="C++" width="36" height="36">
-  <img src="./assets/stack/css.svg" alt="CSS" title="CSS" width="36" height="36">
-  <img src="./assets/stack/haskell.svg" alt="Haskell" title="Haskell" width="36" height="36">
-  <img src="./assets/stack/html5.svg" alt="HTML" title="HTML" width="36" height="36">
-  <img src="./assets/stack/javascript.svg" alt="JavaScript" title="JavaScript" width="36" height="36">
-  <img src="./assets/stack/kotlin.svg" alt="Kotlin" title="Kotlin" width="36" height="36">
-  <img src="./assets/stack/python.svg" alt="Python" title="Python" width="36" height="36">
-  <img src="./assets/stack/typescript.svg" alt="TypeScript" title="TypeScript" width="36" height="36">
-</p>
-
-### Frameworks & Libraries
-
-<p>
-  <img src="./assets/stack/expo.svg" alt="Expo" title="Expo" width="36" height="36">
-  <img src="./assets/stack/nextdotjs.svg" alt="Next.js" title="Next.js" width="36" height="36">
-  <img src="./assets/stack/react.svg" alt="React" title="React" width="36" height="36">
-  <img src="./assets/stack/react.svg" alt="React Native" title="React Native" width="36" height="36">
-  <img src="./assets/stack/tailwindcss.svg" alt="Tailwind CSS" title="Tailwind CSS" width="36" height="36">
-</p>
-
-### Applications & Development Tools
-
-<p>
-  <img src="./assets/stack/cplusplus.svg" alt="C++ GDExtension" title="C++ GDExtension" width="36" height="36">
-  <img src="./assets/stack/git.svg" alt="Git" title="Git" width="36" height="36">
-  <img src="./assets/stack/github.svg" alt="GitHub" title="GitHub" width="36" height="36">
-  <img src="./assets/stack/godotengine.svg" alt="Godot 4" title="Godot 4" width="36" height="36">
-</p>
-
-### Security Exploration
-
-<p>
-  <img src="./assets/stack/burpsuite.svg" alt="Burp Suite" title="Burp Suite" width="36" height="36">
-  <img src="./assets/stack/linux.svg" alt="Linux" title="Linux" width="36" height="36">
-  <img src="./assets/stack/wireshark.svg" alt="Wireshark" title="Wireshark" width="36" height="36">
-</p>
-
-### Creative & Design Skills
-
-#### Design Tools
-
-<p>
-  <img src="./assets/stack/adobeillustrator.svg" alt="Adobe Illustrator" title="Adobe Illustrator" width="36" height="36">
-  <img src="./assets/stack/adobeindesign.svg" alt="Adobe InDesign" title="Adobe InDesign" width="36" height="36">
-  <img src="./assets/stack/adobelightroom.svg" alt="Adobe Lightroom" title="Adobe Lightroom" width="36" height="36">
-  <img src="./assets/stack/adobephotoshop.svg" alt="Adobe Photoshop" title="Adobe Photoshop" width="36" height="36">
-  <img src="./assets/stack/canva.svg" alt="Canva" title="Canva" width="36" height="36">
-  <img src="./assets/stack/figma.svg" alt="Figma" title="Figma" width="36" height="36">
-</p>
-
-#### Video & Motion Graphics
-
-<p>
-  <img src="./assets/stack/adobeaftereffects.svg" alt="Adobe After Effects" title="Adobe After Effects" width="36" height="36">
-  <img src="./assets/stack/adobepremierepro.svg" alt="Adobe Premiere Pro" title="Adobe Premiere Pro" width="36" height="36">
-</p>
-
-## `03 /` On GitHub
-
-<h3 align="center">Consistency</h3>
-
-<p align="center">
-  <a href="https://github.com/ralphchr">
-    <img src="https://streak-stats.demolab.com/?user=ralphchr&amp;mode=weekly&amp;background=09090F&amp;ring=8B5CF6&amp;fire=8EBBEE&amp;currStreakNum=F0E9DD&amp;sideNums=F0E9DD&amp;currStreakLabel=8EBBEE&amp;sideLabels=C5C6D0&amp;dates=C5C6D0&amp;stroke=242633&amp;hide_border=true&amp;disable_animations=true" alt="ralphchr’s total contributions, current weekly streak, and longest weekly streak" width="500">
+  <a href="https://ralphchr.vercel.app/">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-banner.svg">
+      <img src="./assets/profile-banner-animated.svg" alt="RC_ — Always Becoming, Always Building. A creative mind. A problem-solving spirit. Cebu, Philippines. Portfolio: https://ralphchr.vercel.app/" width="100%">
+    </picture>
   </a>
 </p>
 
-<h3 align="center">Git Activity</h3>
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-intro-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-intro.svg">
+    <source media="(max-width: 600px)" srcset="./assets/profile-intro-mobile-animated.svg">
+    <img src="./assets/profile-intro-animated.svg" alt="Ralph Christian Borbon. Computer Science student at UP Cebu, based in Cebu, Philippines. I write code, shape visual identities, and build interactive experiences. Interests: software development, design, AI, games, and cybersecurity." width="100%">
+  </picture>
+</p>
 
-<picture>
-  <source media="(max-width: 600px)" srcset="./assets/activity-mobile.svg">
-  <img src="./assets/activity.svg" alt="ralphchr’s GitHub contribution activity over the last 31 days" width="100%">
-</picture>
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/selected-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/selected-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/selected-heading-mobile-animated.svg">
+    <img src="./assets/selected-heading-animated.svg" alt="01 / Selected work" width="100%">
+  </picture>
+</p>
 
-## `04 /` Beyond the code
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/project-index-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/project-index.svg">
+    <source media="(max-width: 600px)" srcset="./assets/project-index-mobile-animated.svg">
+    <img src="./assets/project-index-animated.svg" alt="RELAYA — Communication and AI; AI, speech recognition, NLP. LazyFill — Google Forms autofill extension; React, TypeScript, Manifest V3. TUGONEX — Healthcare; React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — Community; HTML, CSS, JavaScript." width="100%">
+  </picture>
+</p>
 
-I’m the **Marketing Director of the UP Computer Science Guild**, a **Seasonal Tutor**, a **Freelance Graphic Designer**, and a **Competitive Gamer**.
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/toolkit-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/toolkit-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/toolkit-heading-mobile-animated.svg">
+    <img src="./assets/toolkit-heading-animated.svg" alt="02 / The toolkit" width="100%">
+  </picture>
+</p>
 
-## `05 /` Let’s connect
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/toolkit-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/toolkit.svg">
+    <source media="(max-width: 600px)" srcset="./assets/toolkit-mobile-animated.svg">
+    <img src="./assets/toolkit-animated.svg" alt="Languages: C, C++, CSS, Haskell, HTML, JavaScript, Kotlin, Python, TypeScript. Frameworks and libraries: Expo, Next.js, React, React Native, Tailwind CSS. Development tools: C++ GDExtension, Git, GitHub, Godot 4. Security: Burp Suite, Linux, Wireshark. Design: Adobe Illustrator, InDesign, Lightroom, Photoshop, Canva, Figma. Video and motion: Adobe After Effects, Premiere Pro." width="100%">
+  </picture>
+</p>
 
-[Facebook](https://www.facebook.com/ralphchrr) · [LinkedIn](https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/) · [Gmail](mailto:borbon.rchr@gmail.com)
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/github-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/github-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/github-heading-mobile-animated.svg">
+    <img src="./assets/github-heading-animated.svg" alt="03 / On GitHub" width="100%">
+  </picture>
+</p>
+
+<p>
+  <a href="https://github.com/ralphchr">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/consistency-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/consistency.svg">
+    <source media="(max-width: 600px)" srcset="./assets/consistency-mobile-animated.svg">
+    <img src="./assets/consistency-animated.svg" alt="GitHub consistency: contributions and active days in the displayed calendar window, current and longest weekly streaks. Monday-Sunday weeks." width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <a href="https://github.com/ralphchr">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/activity-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/activity.svg">
+    <source media="(max-width: 600px)" srcset="./assets/activity-mobile-animated.svg">
+    <img src="./assets/activity-animated.svg" alt="GitHub contribution signal: real daily counts over the last 31 days, active days, and peak activity." width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/leetcode-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/leetcode-heading-mobile-animated.svg">
+    <img src="./assets/leetcode-heading-animated.svg" alt="04 / Problem solving / LeetCode" width="100%">
+  </picture>
+</p>
+
+<p>
+  <a href="https://leetcode.com/u/ralphchr/">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/leetcode-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode.svg">
+    <source media="(max-width: 600px)" srcset="./assets/leetcode-mobile-animated.svg">
+    <img src="./assets/leetcode-animated.svg" alt="ralphchr’s LeetCode stats: solved problems by difficulty, global ranking, and last refresh date. Updated daily by GitHub Actions." width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/monkeytype-heading-mobile-animated.svg">
+    <img src="./assets/monkeytype-heading-animated.svg" alt="05 / At the keyboard / Monkeytype" width="100%">
+  </picture>
+</p>
+
+<p>
+  <a href="https://monkeytype.com/profile/ralphchr">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype.svg">
+    <source media="(max-width: 600px)" srcset="./assets/monkeytype-mobile-animated.svg">
+    <img src="./assets/monkeytype-animated.svg" alt="ralphchr’s Monkeytype public personal bests for 15-second and 30-second English tests, accuracy, completed tests, and typing time." width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/beyond-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/beyond-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/beyond-heading-mobile-animated.svg">
+    <img src="./assets/beyond-heading-animated.svg" alt="06 / Beyond the code" width="100%">
+  </picture>
+</p>
+
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/beyond-code-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/beyond-code.svg">
+    <source media="(max-width: 600px)" srcset="./assets/beyond-code-mobile-animated.svg">
+    <img src="./assets/beyond-code-animated.svg" alt="Marketing Director of the UP Computer Science Guild. Seasonal Tutor. Freelance Graphic Designer. Competitive Esports Player (Tier 2 CODM Esports Player)." width="100%">
+  </picture>
+</p>
+
+<p>
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/connect-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/connect-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/connect-heading-mobile-animated.svg">
+    <img src="./assets/connect-heading-animated.svg" alt="07 / Let’s connect" width="100%">
+  </picture>
+</p>
+
+<p>
+  <a href="https://www.facebook.com/ralphchrr">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-facebook-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook.svg">
+    <source media="(max-width: 600px)" srcset="./assets/contact-facebook-mobile-animated.svg">
+    <img src="./assets/contact-facebook-animated.svg" alt="Facebook: @ralphchrr" width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-linkedin-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin.svg">
+    <source media="(max-width: 600px)" srcset="./assets/contact-linkedin-mobile-animated.svg">
+    <img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: Ralph Christian Borbon" width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <a href="mailto:borbon.rchr@gmail.com">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-gmail-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail.svg">
+    <source media="(max-width: 600px)" srcset="./assets/contact-gmail-mobile-animated.svg">
+    <img src="./assets/contact-gmail-animated.svg" alt="Gmail: borbon.rchr@gmail.com" width="100%">
+  </picture>
+  </a>
+</p>

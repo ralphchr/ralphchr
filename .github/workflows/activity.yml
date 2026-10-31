@@ -1,4 +1,4 @@
-name: Refresh Git activity graph
+name: Refresh profile statistics
 
 on:
   schedule:
@@ -7,6 +7,10 @@ on:
   push:
     paths:
       - scripts/update-activity.py
+      - scripts/update-leetcode.py
+      - scripts/update-monkeytype.py
+      - scripts/build-profile.cjs
+      - scripts/lib/**
       - .github/workflows/activity.yml
 
 permissions:
@@ -23,13 +27,23 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Render activity from the public GitHub calendar
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch the public GitHub calendar
         run: python3 scripts/update-activity.py
-      - name: Commit graph changes
+      - name: Refresh verified LeetCode stats
         run: |
-          git add assets/activity.svg assets/activity-mobile.svg
+          python3 scripts/update-leetcode.py
+      - name: Refresh public Monkeytype stats
+        run: python3 scripts/update-monkeytype.py
+      - name: Render themed profile cards
+        run: node scripts/build-profile.cjs --stats-only
+      - name: Commit statistics changes
+        run: |
+          git add assets/data/ assets/activity*.svg assets/consistency*.svg assets/leetcode*.svg assets/monkeytype*.svg
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh Git activity graph [skip ci]"
+          git commit -m "Refresh profile statistics [skip ci]"
           git push
