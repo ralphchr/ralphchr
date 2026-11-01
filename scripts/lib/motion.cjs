@@ -25,11 +25,11 @@ function glitch(s,animated){
   if(!animated||s.h<180)return '';
   return `<g aria-hidden="true" opacity="0"><path d="M${s.w-96} 16h38m-18 5h62" stroke="#EF7583" stroke-width="2"/><path d="M${s.w-92} 21h14" stroke="#8EBBEE"/><animate attributeName="opacity" values="0;0;.8;0;.5;0" keyTimes="0;.88;.91;.94;.97;1" calcMode="discrete" dur="5s" repeatCount="indefinite"/></g>`;
 }
-// Long holds keep copy readable. These run on a clock, since README images
-// cannot receive scroll/viewport events or run JavaScript.
-function stage(content,animated,{id='stage',duration=16,delay=0,dx=0,dy=14,min=0}={}){
+// Hard, brief displacement instead of fading whole panels in and out.
+function stage(content,animated,{id='stage',duration=16,delay=0,dx=0,dy=0}={}){
   if(!animated)return content;
-  return `<g id="${id}" opacity="${min}">${content}<animate attributeName="opacity" values="${min};1;1;${min};${min}" keyTimes="0;.09;.88;.97;1" dur="${duration}s" begin="${delay}s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="${dx} ${dy};0 0;0 0;${-dx} ${-dy};${dx} ${dy}" keyTimes="0;.09;.88;.97;1" dur="${duration}s" begin="${delay}s" repeatCount="indefinite"/></g>`;
+  const x=dx?Math.sign(dx)*3:2,y=dy?Math.sign(dy)*2:0;
+  return `<g id="${id}">${content}<animateTransform attributeName="transform" type="translate" values="0 0;0 0;${x} ${y};${-x} ${-y};0 0;0 0" keyTimes="0;.86;.875;.89;.905;1" calcMode="discrete" dur="${duration}s" begin="${delay}s" repeatCount="indefinite"/></g>`;
 }
 function terminal(s,content,animated,x,y,w,h,id='terminal-copy'){
   if(!animated)return content;
