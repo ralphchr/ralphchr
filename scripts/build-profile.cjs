@@ -1,6 +1,7 @@
 // Run with Node 20+. All lettering is outlined; no npm dependencies required.
 const fs=require('node:fs');
 const path=require('node:path');
+const {light}=require('./lib/theme.cjs');
 const root=path.resolve(__dirname,'..');
 const {SVG,esc}=require('./lib/svg.cjs');
 const {flow,background,stage,terminal}=require('./lib/motion.cjs');
@@ -18,7 +19,7 @@ function words(s,text,x,y,size,maxWidth,font='body',color=C.silver,lineHeight=si
   if(line)s.add(s.text(line,x,y,size,font,color));
   return y;
 }
-function finish(s,animated){s.parts.splice(1,0,background(s.w,s.h,false));s.add(flow(s.w,s.h,false));return s.finish();}
+function finish(s,animated){s.parts.splice(1,0,background(s.w,s.h,false));return s.finish();}
 function label(s,text,x,y){s.add(s.text(text,x,y,18,'mono',C.cyan,.5));}
 function heading(mobile,animated,number,title,annotation){
   const w=mobile?600:1200,p=mobile?32:36,s=panel(w,90,title,annotation);
@@ -74,7 +75,7 @@ function beyond(mobile,animated){
 }
 function linkCard(mobile,title,subtitle,animated){
   const s=panel(400,120,title,subtitle),slug=title.toLowerCase();
-  s.add('<path d="M.5 .5H384L399.5 16V119.5H.5Z" fill="#09090F" stroke="#C5C6D0" stroke-opacity=".27"/><path d="M.5 18V.5H18M382 119.5h17.5V102" fill="none" stroke="#8EBBEE" stroke-opacity=".75"/><circle cx="42" cy="61" r="25" fill="none" stroke="#8B5CF6" stroke-opacity=".5"/>');
+  s.add('<path d="M.5 .5H384L399.5 16V119.5H.5Z" fill="#09090F" stroke="none"/><circle cx="42" cy="61" r="25" fill="none" stroke="#8B5CF6" stroke-opacity=".5"/>');
   s.add(s.text('RC_',376,21,11,'mono',C.purple,0,false,'end'));
   if(slug==='facebook')s.add('<g transform="translate(20 37) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#8EBBEE"/></g>');
   if(slug==='linkedin')s.add(s.text('in',25,75,31,'display',C.cyan,-1));
@@ -89,7 +90,9 @@ function linkCard(mobile,title,subtitle,animated){
 function write(stem,fn){
   for(const mobile of [false,true])for(const animated of [false,true]){
     const file=stem+(mobile?'-mobile':'')+(animated?'-animated':'')+'.svg';
-    fs.writeFileSync(path.join(root,'assets',file),fn(mobile,animated));
+    const svg=fn(mobile,animated);
+    fs.writeFileSync(path.join(root,'assets',file),svg);
+    fs.writeFileSync(path.join(root,'assets',file.replace('.svg','-light.svg')),light(svg));
   }
 }
 write('leetcode',leetcode);
@@ -100,7 +103,7 @@ if(!process.argv.includes('--leetcode-only')){
   write('hackerrank',hackerrank);
 }
 if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-only')){
-  for(const animated of [false,true])fs.writeFileSync(root+'/assets/profile-banner'+(animated?'-animated':'')+'.svg',banner(false,0,animated));
+  for(const animated of [false,true]){const svg=banner(false,0,animated),stem=root+'/assets/profile-banner'+(animated?'-animated':'');fs.writeFileSync(stem+'.svg',svg);fs.writeFileSync(stem+'-light.svg',light(svg));}
   write('profile-intro',identity);
   write('project-index',projects);
   write('toolkit',toolkit);

@@ -13,9 +13,9 @@ class SVG{
     return `<g transform="translate(${n(x)} ${n(y)}) scale(${n(size/1000)})" ${paint}>${uses.join('')}</g>`;
   }
   add(s){this.parts.push(s);}
-  finish(){return `<svg xmlns="http://www.w3.org/2000/svg" width="${this.w}" height="${this.h}" viewBox="0 0 ${this.w} ${this.h}" role="img" aria-labelledby="title desc"><title id="title">${esc(this.title)}</title><desc id="desc">${esc(this.desc)}</desc><!-- Inter Black / Inter Regular / JetBrains Mono, converted to vector outlines. No external fonts, CSS or scripts. --><defs>${[...this.glyphs].map(([id,d])=>`<path id="${id}" d="${d}"/>`).join('')}</defs>${this.parts.join('')}</svg>\n`;}
+  finish(){return `<svg xmlns="http://www.w3.org/2000/svg" width="${this.w}" height="${this.h}" viewBox="0 0 ${this.w} ${this.h}" role="img" aria-labelledby="title desc"><title id="title">${esc(this.title)}</title><desc id="desc">${esc(this.desc)}</desc><!-- Inter Black / Inter Regular / JetBrains Mono, converted to vector outlines. No external fonts, CSS or scripts. --><defs>${[...this.glyphs].map(([id,d])=>`<path id="${id}" d="${d}"/>`).join('')}</defs>${this.parts.join('').replace(/fill="#[0-9a-f]{6}"/gi,paint=>/09090f|11141f|111a2a|0e1020|101124/i.test(paint)?'fill="none"':paint)}</svg>\n`;}
 }
-function frame(s){s.add(`<rect width="${s.w}" height="${s.h}" fill="#09090F"/><rect x=".5" y=".5" width="${s.w-1}" height="${s.h-1}" fill="none" stroke="#C5C6D0" stroke-opacity=".25"/>`);}
+function frame(s){s.add(`<rect width="${s.w}" height="${s.h}" fill="none"/>`);}
 
 
 module.exports={SVG,frame,esc,n};
