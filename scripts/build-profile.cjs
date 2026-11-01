@@ -76,7 +76,6 @@ function beyond(mobile,animated){
 function linkCard(mobile,title,subtitle,animated){
   const s=panel(400,120,title,subtitle),slug=title.toLowerCase();
   s.add('<path d="M.5 .5H384L399.5 16V119.5H.5Z" fill="#09090F" stroke="none"/><circle cx="42" cy="61" r="25" fill="none" stroke="#8B5CF6" stroke-opacity=".5"/>');
-  s.add(s.text('RC_',376,21,11,'mono',C.purple,0,false,'end'));
   if(slug==='facebook')s.add('<g transform="translate(20 37) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#8EBBEE"/></g>');
   if(slug==='linkedin')s.add(s.text('in',25,75,31,'display',C.cyan,-1));
   if(slug==='gmail')s.add('<g transform="translate(20 39) scale(.55)"><path d="M15 24h50v33H15Z M15 25l25 19 25-19" fill="none" stroke="#8EBBEE" stroke-width="4" stroke-linejoin="round"/></g>');

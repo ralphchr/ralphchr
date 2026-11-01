@@ -11,7 +11,6 @@ function card(service,desc){
   const names={github:'GitHub',leetcode:'LeetCode',hackerrank:'HackerRank',monkeytype:'Monkeytype'};
   s.add('<defs><pattern id="plate-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#8EBBEE" stroke-opacity=".035"/></pattern></defs><path d="M.5 .5H287.5V243L271 259.5H.5Z" fill="#09090F" stroke="none"/><path d="M1 1H287V242L270 259H1Z" fill="url(#plate-grid)"/>');
   text(s,names[service],16,29,18,'display',C.paper);
-  text(s,'RC_',272,27,11,'mono',C.purple,'end');
   s.add('<path d="M16 42H272" stroke="#C5C6D0" stroke-opacity=".14"/><path d="M16 42h32" stroke="#8EBBEE"/>');
   return s;
 }
