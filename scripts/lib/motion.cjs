@@ -25,4 +25,14 @@ function glitch(s,animated){
   if(!animated||s.h<180)return '';
   return `<g aria-hidden="true" opacity="0"><path d="M${s.w-96} 16h38m-18 5h62" stroke="#EF7583" stroke-width="2"/><path d="M${s.w-92} 21h14" stroke="#8EBBEE"/><animate attributeName="opacity" values="0;0;.8;0;.5;0" keyTimes="0;.88;.91;.94;.97;1" calcMode="discrete" dur="5s" repeatCount="indefinite"/></g>`;
 }
-module.exports={flow,background,glitch};
+// Long holds keep copy readable. These run on a clock, since README images
+// cannot receive scroll/viewport events or run JavaScript.
+function stage(content,animated,{id='stage',duration=16,delay=0,dx=0,dy=14,min=0}={}){
+  if(!animated)return content;
+  return `<g id="${id}" opacity="${min}">${content}<animate attributeName="opacity" values="${min};1;1;${min};${min}" keyTimes="0;.09;.88;.97;1" dur="${duration}s" begin="${delay}s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="${dx} ${dy};0 0;0 0;${-dx} ${-dy};${dx} ${dy}" keyTimes="0;.09;.88;.97;1" dur="${duration}s" begin="${delay}s" repeatCount="indefinite"/></g>`;
+}
+function terminal(s,content,animated,x,y,w,h,id='terminal-copy'){
+  if(!animated)return content;
+  return `<defs><clipPath id="${id}"><rect x="${x}" y="${y}" width="${w}" height="${h}"><animate attributeName="width" values="0;${w*.15};${w*.3};${w*.48};${w*.65};${w*.82};${w};${w};0;0" keyTimes="0;.025;.05;.075;.10;.125;.15;.9;.98;1" calcMode="discrete" dur="19s" repeatCount="indefinite"/></rect></clipPath></defs><g clip-path="url(#${id})">${content}</g>`;
+}
+module.exports={flow,background,glitch,stage,terminal};
