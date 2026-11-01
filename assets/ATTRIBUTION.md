@@ -40,3 +40,9 @@ Collectors validate upstream responses before replacing files under `data/`. Onl
 Run `node scripts/build-profile.cjs` with Node 20+ to regenerate local artwork; no npm packages are required. `scripts/lib/compact-stats.cjs` owns the compact statistical cards and chart. Statistical plates use the portfolio’s near-black background, architectural corner cuts, RC_ marks, quiet grids and thin rules rather than the reference image’s filled terminal bars or tiled meters. The earlier stats module retains the shared weekly calculation and legacy reference renderers.
 
 Refresh data with `python scripts/update-activity.py`, `python scripts/update-leetcode.py`, `python scripts/update-monkeytype.py` and `python scripts/update-hackerrank.py`, then run `node scripts/build-profile.cjs --stats-only`. The existing GitHub Actions workflow refreshes these daily at 03:17 UTC (11:17 AM Manila), manually and when generator files change. Upstream and GitHub caching can delay display changes. Repository rules must allow bot commits.
+
+## Continuous transparent canvas
+
+All displayed artwork now has transparent container fills, including the banner, project chips, toolkit icon tiles, statistics and socials. Separate card/panel outlines are removed; foreground typography, thin rules, icons and data graphics sit directly on GitHub’s single README surface. The portfolio callout remains a foreground outline. Subtle grid/circuit marks are transparent overlays rather than opaque panels.
+
+The generator emits readable dark-theme originals and light-theme counterparts with ink text and deeper cyan/purple accents. README picture sources select the palette using prefers-color-scheme and preserve reduced-motion and mobile variants. Both palettes retain transparency. The generator’s final rendering step strips legacy opaque container colors from reused icon tiles; foreground data marks remain filled. Daily stats refreshes regenerate both palettes too.
