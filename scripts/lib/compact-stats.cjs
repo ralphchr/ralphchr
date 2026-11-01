@@ -8,9 +8,11 @@ const read=name=>JSON.parse(fs.readFileSync(root+'/assets/data/'+name+'.json','u
 function text(s,t,x,y,size=16,font='mono',color=C.silver,align='start'){s.add(s.text(String(t),x,y,size,font,color,0,false,align));}
 function card(service,desc){
   const s=new SVG(288,260,service+' / public statistics',desc);
-  s.add('<rect x=".5" y=".5" width="287" height="259" rx="5" fill="#0E1020" stroke="#8B5CF6" stroke-opacity=".55"/><path d="M5 0H283Q288 0 288 5V30H0V5Q0 0 5 0Z" fill="#241D4D"/>');
-  text(s,service+' >',16,21,14,'mono',C.cyan);
-  text(s,'public',272,21,12,'mono',C.silver,'end');
+  const names={github:'GitHub',leetcode:'LeetCode',hackerrank:'HackerRank',monkeytype:'Monkeytype'};
+  s.add('<defs><pattern id="plate-grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#8EBBEE" stroke-opacity=".035"/></pattern></defs><path d="M.5 .5H287.5V243L271 259.5H.5Z" fill="#09090F" stroke="#C5C6D0" stroke-opacity=".24"/><path d="M1 1H287V242L270 259H1Z" fill="url(#plate-grid)"/><path d="M.5 18V.5H18M270 259.5h-16" fill="none" stroke="#8EBBEE" stroke-opacity=".7"/>');
+  text(s,names[service],16,29,18,'display',C.paper);
+  text(s,'RC_',272,27,11,'mono',C.purple,'end');
+  s.add('<path d="M16 42H272" stroke="#C5C6D0" stroke-opacity=".14"/><path d="M16 42h32" stroke="#8EBBEE"/>');
   return s;
 }
 function stamp(s,date){text(s,'as of '+date+' UTC',16,244,12);return s.finish();}
@@ -21,7 +23,7 @@ function consistency(m,a){
   text(s,total,16,85,48,'display',C.paper);
   text(s,'contributions / calendar',16,111,14);
   const peak=Math.max(1,...days.map(d=>d.count));
-  days.forEach((d,i)=>{const h=Math.max(2,d.count/peak*55);s.add(`<rect x="${16+i*8.2}" y="${180-h}" width="5.6" height="${h}" fill="${i===30?C.cyan:C.purple}" fill-opacity="${d.count?.9:.18}"><title>${d.date}: ${d.count}</title></rect>`);});
+  days.forEach((d,i)=>{const h=Math.max(2,d.count/peak*55);s.add(`<rect x="${16+i*8.2}" y="${180-h}" width="5.6" height="${h}" fill="${d.count===peak?C.purple:C.cyan}" fill-opacity="${d.count?.9:.18}"><title>${d.date}: ${d.count}</title></rect>`);});
   text(s,recent+' in 31D',16,204,14,'mono',C.cyan);
   text(s,week.current+'W streak / '+week.longest+'W best',16,225,14);
   if(a)s.add(`<rect x="16" y="184" width="8" height="2" fill="${C.cyan}"><animate attributeName="x" values="16;265;16" calcMode="discrete" dur="3s" repeatCount="indefinite"/></rect>`);
@@ -33,7 +35,8 @@ function leetcode(m,a){
   Object.entries(data.difficulties).forEach(([name,d],i)=>{
     const y=127+i*30,color=[C.cyan,C.purple,C.red][i];
     text(s,name[0].toUpperCase()+name.slice(1),16,y,14,'mono',color);
-    for(let j=0;j<12;j++)s.add(`<rect x="${87+j*11}" y="${y-10}" width="7" height="11" fill="${j<Math.round(d.solved/Math.max(1,data.solved)*12)?color:'#24243A'}"/>`);
+    const valueX=94+140*d.solved/Math.max(1,data.solved);
+    s.add(`<path d="M94 ${y-5}H234" stroke="${color}" stroke-opacity=".18"/><path d="M94 ${y-5}H${valueX}" stroke="${color}" stroke-width="2"/><path d="M${valueX} ${y-9}l4 4-4 4-4-4Z" fill="${color}"/>`);
     text(s,d.solved,272,y,16,'mono',C.paper,'end');
   });
   text(s,'rank #'+data.ranking.toLocaleString('en-US'),16,220,14);

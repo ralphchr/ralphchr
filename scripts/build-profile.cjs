@@ -74,14 +74,16 @@ function beyond(mobile,animated){
 }
 function linkCard(mobile,title,subtitle,animated){
   const s=panel(400,120,title,subtitle),slug=title.toLowerCase();
-  s.add('<rect x=".5" y=".5" width="399" height="119" rx="6" fill="#101124" stroke="#8B5CF6" stroke-opacity=".5"/><path d="M6 0H394Q400 0 400 6V29H0V6Q0 0 6 0Z" fill="#29204F"/>');
-  s.add(s.text('$ open '+slug+'.',16,20,16,'mono',C.cyan));
-  if(slug==='facebook')s.add('<g transform="translate(16 47) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#F0E9DD"/></g>');
-  if(slug==='linkedin')s.add(s.text('in',18,88,40,'display',C.ivory,-1));
-  if(slug==='gmail')s.add('<g transform="translate(16 47) scale(.55)"><path d="M15 24h50v33H15Z M15 25l25 19 25-19" fill="none" stroke="#F0E9DD" stroke-width="4" stroke-linejoin="round"/></g>');
-  s.add(s.text(title,78,66,26,'display',C.ivory));s.add(s.text(subtitle,78,93,16,'mono',C.silver));
-  const arrow=s.text('->',374,77,25,'mono',C.cyan,0,false,'end');
-  s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="0 0;3 0;0 0" calcMode="discrete" dur="2s" repeatCount="indefinite"/></g>`:arrow);
+  s.add('<path d="M.5 .5H384L399.5 16V119.5H.5Z" fill="#09090F" stroke="#C5C6D0" stroke-opacity=".27"/><path d="M.5 18V.5H18M382 119.5h17.5V102" fill="none" stroke="#8EBBEE" stroke-opacity=".75"/><circle cx="42" cy="61" r="25" fill="none" stroke="#8B5CF6" stroke-opacity=".5"/>');
+  s.add(s.text('RC_',376,21,11,'mono',C.purple,0,false,'end'));
+  if(slug==='facebook')s.add('<g transform="translate(20 37) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#8EBBEE"/></g>');
+  if(slug==='linkedin')s.add(s.text('in',25,75,31,'display',C.cyan,-1));
+  if(slug==='gmail')s.add('<g transform="translate(20 39) scale(.55)"><path d="M15 24h50v33H15Z M15 25l25 19 25-19" fill="none" stroke="#8EBBEE" stroke-width="4" stroke-linejoin="round"/></g>');
+  s.add(s.text(title,84,54,26,'display',C.ivory));s.add(s.text(subtitle,84,82,16,'mono',C.silver));
+  s.add('<path d="M84 27h24" stroke="#8EBBEE" stroke-width="1.5"/>');
+  const arrow='<path d="M353 81l20-20m-14 0h14v14" fill="none" stroke="#8EBBEE" stroke-width="1.5"/>';
+  s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="0 0;2 -2;0 0" calcMode="discrete" dur="3s" repeatCount="indefinite"/></g>`:arrow);
+  if(animated)s.add('<path d="M108 27h8" stroke="#EF7583"><animate attributeName="visibility" values="hidden;hidden;visible;hidden" keyTimes="0;.86;.89;1" calcMode="discrete" dur="4s" repeatCount="indefinite"/></path>');
   return s.finish();
 }
 function write(stem,fn){
@@ -105,6 +107,6 @@ if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-on
   write('beyond-code',beyond);
   const headings=[['selected-heading','','The build log','IDEAS GIVEN FORM'],['toolkit-heading','','Instruments of craft','CODE / SYSTEMS / DESIGN'],['github-heading','','Signals from the lab','GITHUB / LEETCODE / HACKERRANK / MONKEYTYPE'],['connect-heading','','Open a channel','FIND ME ON THE OTHER SIDE']];
   for(const [stem,num,title,annotation] of headings)write(stem,(m,a)=>heading(m,a,num,title,annotation));
-  for(const [slug,title,sub] of [['facebook','Facebook','Find me online'],['linkedin','LinkedIn','Say hello'],['gmail','Gmail','Start a conversation']])write('contact-'+slug,(m,a)=>linkCard(m,title,sub,a));
+  for(const [slug,title,sub] of [['facebook','Facebook','@ralphchrr'],['linkedin','LinkedIn','Trade ideas'],['gmail','Gmail','borbon.rchr@gmail.com']])write('contact-'+slug,(m,a)=>linkCard(m,title,sub,a));
 }
 console.log('Built outlined profile artwork, native SVG motion and reduced-motion versions.');

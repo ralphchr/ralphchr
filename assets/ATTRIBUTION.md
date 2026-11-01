@@ -16,7 +16,7 @@ Technology icons come from [Simple Icons 16.0.0](https://github.com/simple-icons
 
 The large repeated-name biography is replaced with a compact continuation below the banner: “UP CEBU . COMPUTER SCIENCE - II,” a brief monospaced manifesto, and interests. The full name appears in the banner. “Parallel pursuits” compresses the four roles into one desktop row and two columns on phones: UPCSG Marketing Director; seasonal tutor in calculus/programming; freelance graphic designer for Pubmats/VFX; competitive Tier 2 CODM esports player. All role details are supplied directly by Ralph.
 
-“Open a channel” uses terminal-style cards with local icons, command bars, labels and arrows. At 260px wide, Facebook, LinkedIn and Gmail fit one desktop row and wrap on phones. The destinations and order remain unchanged; Gmail links to `mailto:borbon.rchr@gmail.com`.
+“Open a channel” uses original architectural link plates: cut corners, circular icon insets, RC_ stamps, fine cyan rules and diagonal link arrows. Filled command bars and shell-command captions from the supplied layout reference are not used. At 260px wide, Facebook, LinkedIn and Gmail fit one desktop row and wrap on phones. The destinations and order remain unchanged; Gmail links to `mailto:borbon.rchr@gmail.com`.
 
 ## Animation and accessibility
 
@@ -37,6 +37,6 @@ Collectors validate upstream responses before replacing files under `data/`. Onl
 
 ## Rebuilding
 
-Run `node scripts/build-profile.cjs` with Node 20+ to regenerate local artwork; no npm packages are required. `scripts/lib/compact-stats.cjs` owns the compact statistical cards and chart. The earlier stats module retains the shared weekly calculation and legacy reference renderers.
+Run `node scripts/build-profile.cjs` with Node 20+ to regenerate local artwork; no npm packages are required. `scripts/lib/compact-stats.cjs` owns the compact statistical cards and chart. Statistical plates use the portfolio’s near-black background, architectural corner cuts, RC_ marks, quiet grids and thin rules rather than the reference image’s filled terminal bars or tiled meters. The earlier stats module retains the shared weekly calculation and legacy reference renderers.
 
 Refresh data with `python scripts/update-activity.py`, `python scripts/update-leetcode.py`, `python scripts/update-monkeytype.py` and `python scripts/update-hackerrank.py`, then run `node scripts/build-profile.cjs --stats-only`. The existing GitHub Actions workflow refreshes these daily at 03:17 UTC (11:17 AM Manila), manually and when generator files change. Upstream and GitHub caching can delay display changes. Repository rules must allow bot commits.
