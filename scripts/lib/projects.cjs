@@ -22,19 +22,19 @@ for(const project of projects)for(const [slug] of project.stack){
  icons[slug]=generic[slug]||fs.readFileSync(root+'/assets/stack/'+slug+'.svg','utf8').match(/<path\b[^>]*\/>/g).join('');
 }
 function build(mobile,animated=false){
- const width=mobile?600:1200,rowHeight=mobile?158:88,head=mobile?68:58,height=head+projects.length*rowHeight+8;
+ const width=mobile?600:1200,rowHeight=mobile?124:74,head=48,height=head+projects.length*rowHeight+8;
  const s=new SVG(width,height,'Projects so far — domain and technology index',projects.map(p=>p.name+': '+p.domain.toLowerCase()+'. '+(p.name==='RELAYA'?'Approach':'Built with')+': '+p.stack.map(x=>x[1]).join(', ')+'.').join(' '));
  s.add(`<rect width="${width}" height="${height}" fill="#09090F"/>`);
  s.add(background(width,height,false));
  s.add(`<path d="M${mobile?32:30} 0H${width-(mobile?32:30)}" stroke="#8B5CF6" stroke-width="2"/>`);
- s.add(s.text(mobile?'PROJECT INDEX':'PROJECT / DOMAIN',mobile?32:48,mobile?42:35,mobile?20:14,'mono','#C5C6D0',.6));
- if(!mobile)s.add(s.text('STACK / APPROACH',740,35,14,'mono','#C5C6D0',.6));
- const font=mobile?20:14,chipHeight=mobile?40:29,icon=mobile?21:15,gap=mobile?9:8,padding=mobile?11:9,chipGap=mobile?8:7;
+ s.add(s.text(mobile?'IDEAS / IN THE WILD':'PROJECT / DOMAIN',mobile?32:48,28,mobile?16:12,'mono','#C5C6D0',.6));
+ if(!mobile)s.add(s.text('STACK / APPROACH',740,28,12,'mono','#C5C6D0',.6));
+ const font=mobile?18:14,chipHeight=mobile?34:29,icon=mobile?19:15,gap=mobile?9:8,padding=mobile?11:9,chipGap=mobile?8:7;
  function chip(slug,label,x,y){
   const chipWidth=s.measure(label,font,'mono')+padding*2+icon+gap;
   s.add(`<rect x="${n(x)}" y="${y}" width="${n(chipWidth)}" height="${chipHeight}" rx="3" fill="#11141F" stroke="#8B5CF6" stroke-opacity=".27" stroke-width=".8"/>`);
   s.add(`<g transform="translate(${n(x+padding)} ${n(y+(chipHeight-icon)/2)}) scale(${n(icon/24)})" color="#8EBBEE" fill="#8EBBEE">${icons[slug]}</g>`);
-  s.add(s.text(label,x+padding+icon+gap,y+(mobile?27:20),font,'mono','#F0E9DD'));
+  s.add(s.text(label,x+padding+icon+gap,y+(mobile?24:20),font,'mono','#F0E9DD'));
   return chipWidth;
  }
  projects.forEach((p,i)=>{
@@ -42,16 +42,16 @@ function build(mobile,animated=false){
   const rowStart=s.parts.length;
   s.add(`<path d="M${mobile?32:30} ${y+rowHeight-1}H${width-(mobile?32:30)}" stroke="#C5C6D0" stroke-opacity=".16"/>`);
   if(mobile){
-   s.add(s.text(p.name,32,y+39,36,'display','#F0E9DD',-.7));
-   s.add(s.text(p.domain,32,y+76,20,'mono','#8EBBEE',.4));
+   s.add(s.text(p.name,32,y+32,32,'display','#F0E9DD',-.7));
+   s.add(s.text(p.domain,32,y+59,18,'mono','#8EBBEE',.4));
    let x=32;
-   p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+97)+chipGap;});
+   p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+77)+chipGap;});
    if(x-chipGap>width-32)throw Error('Mobile chips exceed margin '+p.name+' '+x);
   }else{
-   s.add(s.text(p.name,48,y+39,28,'display','#F0E9DD',-.5));
-   s.add(s.text(p.domain,48,y+66,14,'mono','#8EBBEE',.6));
+   s.add(s.text(p.name,48,y+30,26,'display','#F0E9DD',-.5));
+   s.add(s.text(p.domain,48,y+54,13,'mono','#8EBBEE',.6));
    let x=740;
-   p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+27)+chipGap;});
+   p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+20)+chipGap;});
    if(x-chipGap>width-30)throw Error('Desktop chips exceed margin '+p.name);
   }
   const row=s.parts.splice(rowStart).join('');

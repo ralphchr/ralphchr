@@ -7,198 +7,99 @@
   </a>
 </p>
 
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-intro-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-intro.svg">
-    <source media="(max-width: 600px)" srcset="./assets/profile-intro-mobile-animated.svg">
-    <img src="./assets/profile-intro-animated.svg" alt="Ralph Christian Borbon. Computer Science - II student at UP Cebu, based in Cebu, Philippines. I write code, shape visual identities, and build interactive experiences. Interests: software development, design, AI, games, and cybersecurity." width="100%">
-  </picture>
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-intro-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-intro.svg">
+<source media="(max-width: 600px)" srcset="./assets/profile-intro-mobile-animated.svg">
+<img src="./assets/profile-intro-animated.svg" alt="UP CEBU . COMPUTER SCIENCE - II. Based in Cebu, Philippines. I write code, shape visual identities, and build interactive experiences. Interests: software development, design, AI, games, and cybersecurity." width="100%">
+</picture></p>
+
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/selected-heading-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/selected-heading.svg">
+<source media="(max-width: 600px)" srcset="./assets/selected-heading-mobile-animated.svg">
+<img src="./assets/selected-heading-animated.svg" alt="The build log / ideas given form" width="100%">
+</picture></p>
+
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/project-index-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/project-index.svg">
+<source media="(max-width: 600px)" srcset="./assets/project-index-mobile-animated.svg">
+<img src="./assets/project-index-animated.svg" alt="RELAYA — AI, speech recognition, NLP. LazyFill — React, TypeScript, Manifest V3. TUGONEX — React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — HTML, CSS, JavaScript." width="100%">
+</picture></p>
+
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/toolkit-heading-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/toolkit-heading.svg">
+<source media="(max-width: 600px)" srcset="./assets/toolkit-heading-mobile-animated.svg">
+<img src="./assets/toolkit-heading-animated.svg" alt="Instruments of craft / code, systems, design" width="100%">
+</picture></p>
+
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/toolkit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/toolkit.svg">
+<source media="(max-width: 600px)" srcset="./assets/toolkit-mobile-animated.svg">
+<img src="./assets/toolkit-animated.svg" alt="Languages: C, C++, CSS, Haskell, HTML, JavaScript, Kotlin, Python, TypeScript. Frameworks: Expo, Next.js, React, React Native, Tailwind CSS. Development: C++ GDExtension, Git, GitHub, Godot 4. Security: Burp Suite, Linux, Wireshark. Design: Illustrator, InDesign, Lightroom, Photoshop, Canva, Figma. Motion: After Effects, Premiere Pro." width="100%">
+</picture></p>
+
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/github-heading-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/github-heading.svg">
+<source media="(max-width: 600px)" srcset="./assets/github-heading-mobile-animated.svg">
+<img src="./assets/github-heading-animated.svg" alt="Signals from the lab / GitHub, LeetCode, HackerRank, Monkeytype" width="100%">
+</picture></p>
+
+<p align="center">
+<a href="https://github.com/ralphchr"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/consistency.svg">
+<img src="./assets/consistency-animated.svg" alt="GitHub: calendar-window contributions, last 31 days, and weekly streaks." width="198">
+</picture></a>
+<a href="https://leetcode.com/u/ralphchr/"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode.svg">
+<img src="./assets/leetcode-animated.svg" alt="LeetCode: solved problems, difficulty mix, and global rank." width="198">
+</picture></a>
+<a href="https://www.hackerrank.com/profile/ralphchr"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank.svg">
+<img src="./assets/hackerrank-animated.svg" alt="HackerRank: track count and verified per-track solved counts." width="198">
+</picture></a>
+<a href="https://monkeytype.com/profile/ralphchr"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype.svg">
+<img src="./assets/monkeytype-animated.svg" alt="Monkeytype: public English 15s and 30s personal bests, accuracy and typing time." width="198">
+</picture></a>
 </p>
 
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/selected-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/selected-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/selected-heading-mobile-animated.svg">
-    <img src="./assets/selected-heading-animated.svg" alt="Projects so far" width="100%">
-  </picture>
-</p>
+<p><a href="https://github.com/ralphchr"><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/activity-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/activity.svg">
+<source media="(max-width: 600px)" srcset="./assets/activity-mobile-animated.svg">
+<img src="./assets/activity-animated.svg" alt="GitHub contribution signal: real daily counts over the last 31 days." width="100%">
+</picture></a></p>
 
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/project-index-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/project-index.svg">
-    <source media="(max-width: 600px)" srcset="./assets/project-index-mobile-animated.svg">
-    <img src="./assets/project-index-animated.svg" alt="RELAYA — Communication and AI; AI, speech recognition, NLP. LazyFill — Google Forms autofill extension; React, TypeScript, Manifest V3. TUGONEX — Healthcare; React, TypeScript, Tailwind CSS. Albularyo’s Apprentice — cozy commerce ph tradition game; Godot 4, C++, GDExtension. Upocalypse Control — disaster preparedness strategy game; Godot 4, C++, GDExtension. E-HAW — Community; HTML, CSS, JavaScript." width="100%">
-  </picture>
-</p>
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/beyond-code-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/beyond-code.svg">
+<source media="(max-width: 600px)" srcset="./assets/beyond-code-mobile-animated.svg">
+<img src="./assets/beyond-code-animated.svg" alt="Parallel pursuits: Marketing Director of the UP Computer Science Guild; seasonal tutor in calculus and programming; freelance graphic designer for Pubmats and VFX; competitive Tier 2 CODM esports player." width="100%">
+</picture></p>
 
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/toolkit-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/toolkit-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/toolkit-heading-mobile-animated.svg">
-    <img src="./assets/toolkit-heading-animated.svg" alt="The toolkit" width="100%">
-  </picture>
-</p>
+<p><picture>
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/connect-heading-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/connect-heading.svg">
+<source media="(max-width: 600px)" srcset="./assets/connect-heading-mobile-animated.svg">
+<img src="./assets/connect-heading-animated.svg" alt="Open a channel / find me on the other side" width="100%">
+</picture></p>
 
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/toolkit-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/toolkit.svg">
-    <source media="(max-width: 600px)" srcset="./assets/toolkit-mobile-animated.svg">
-    <img src="./assets/toolkit-animated.svg" alt="Languages: C, C++, CSS, Haskell, HTML, JavaScript, Kotlin, Python, TypeScript. Frameworks and libraries: Expo, Next.js, React, React Native, Tailwind CSS. Development tools: C++ GDExtension, Git, GitHub, Godot 4. Security: Burp Suite, Linux, Wireshark. Design: Adobe Illustrator, InDesign, Lightroom, Photoshop, Canva, Figma. Video and motion: Adobe After Effects, Premiere Pro." width="100%">
-  </picture>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/github-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/github-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/github-heading-mobile-animated.svg">
-    <img src="./assets/github-heading-animated.svg" alt="On GitHub" width="100%">
-  </picture>
-</p>
-
-<p>
-  <a href="https://github.com/ralphchr">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/consistency-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/consistency.svg">
-    <source media="(max-width: 600px)" srcset="./assets/consistency-mobile-animated.svg">
-    <img src="./assets/consistency-animated.svg" alt="GitHub consistency: contributions and active days in the displayed calendar window, current and longest weekly streaks. Monday-Sunday weeks." width="100%">
-  </picture>
-  </a>
-</p>
-
-<p>
-  <a href="https://github.com/ralphchr">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/activity-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/activity.svg">
-    <source media="(max-width: 600px)" srcset="./assets/activity-mobile-animated.svg">
-    <img src="./assets/activity-animated.svg" alt="GitHub contribution signal: real daily counts over the last 31 days, active days, and peak activity." width="100%">
-  </picture>
-  </a>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/leetcode-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/leetcode-heading-mobile-animated.svg">
-    <img src="./assets/leetcode-heading-animated.svg" alt="Problem solving / LeetCode" width="100%">
-  </picture>
-</p>
-
-<p>
-  <a href="https://leetcode.com/u/ralphchr/">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/leetcode-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode.svg">
-    <source media="(max-width: 600px)" srcset="./assets/leetcode-mobile-animated.svg">
-    <img src="./assets/leetcode-animated.svg" alt="ralphchr’s LeetCode stats: solved problems by difficulty, global ranking, and last refresh date. Updated daily by GitHub Actions." width="100%">
-  </picture>
-  </a>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/hackerrank-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/hackerrank-heading-mobile-animated.svg">
-    <img src="./assets/hackerrank-heading-animated.svg" alt="On HackerRank / challenges and public track stats" width="100%">
-  </picture>
-</p>
-
-<p>
-  <a href="https://www.hackerrank.com/profile/ralphchr">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/hackerrank-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank.svg">
-    <source media="(max-width: 600px)" srcset="./assets/hackerrank-mobile-animated.svg">
-    <img src="./assets/hackerrank-animated.svg" alt="ralphchr on HackerRank: verified solved counts and ranks for Problem Solving, Python, and C." width="100%">
-  </picture>
-  </a>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/monkeytype-heading-mobile-animated.svg">
-    <img src="./assets/monkeytype-heading-animated.svg" alt="At the keyboard / Monkeytype" width="100%">
-  </picture>
-</p>
-
-<p>
-  <a href="https://monkeytype.com/profile/ralphchr">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype.svg">
-    <source media="(max-width: 600px)" srcset="./assets/monkeytype-mobile-animated.svg">
-    <img src="./assets/monkeytype-animated.svg" alt="ralphchr’s Monkeytype public personal bests for 15-second and 30-second English tests, accuracy, completed tests, and typing time." width="100%">
-  </picture>
-  </a>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/beyond-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/beyond-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/beyond-heading-mobile-animated.svg">
-    <img src="./assets/beyond-heading-animated.svg" alt="Beyond the code" width="100%">
-  </picture>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/beyond-code-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/beyond-code.svg">
-    <source media="(max-width: 600px)" srcset="./assets/beyond-code-mobile-animated.svg">
-    <img src="./assets/beyond-code-animated.svg" alt="Marketing Director of the UP Computer Science Guild. Seasonal Tutor (calculus and programming). Freelance Graphic Designer (Pubmats and VFX). Competitive Esports Player (Tier 2 CODM Esports Player)." width="100%">
-  </picture>
-</p>
-
-<p>
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/connect-heading-mobile.svg">
-    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/connect-heading.svg">
-    <source media="(max-width: 600px)" srcset="./assets/connect-heading-mobile-animated.svg">
-    <img src="./assets/connect-heading-animated.svg" alt="Let’s connect" width="100%">
-  </picture>
-</p>
-
-<p>
-  <a href="https://www.facebook.com/ralphchrr">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-facebook-mobile.svg">
-      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook.svg">
-      <source media="(max-width: 600px)" srcset="./assets/contact-facebook-mobile-animated.svg">
-      <img src="./assets/contact-facebook-animated.svg" alt="Facebook: @ralphchrr" width="100%">
-    </picture>
-  </a>
-</p>
-
-<p>
-  <a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-linkedin-mobile.svg">
-      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin.svg">
-      <source media="(max-width: 600px)" srcset="./assets/contact-linkedin-mobile-animated.svg">
-      <img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: Ralph Christian Borbon" width="100%">
-    </picture>
-  </a>
-</p>
-
-<p>
-  <a href="mailto:borbon.rchr@gmail.com">
-    <picture>
-      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-gmail-mobile.svg">
-      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail.svg">
-      <source media="(max-width: 600px)" srcset="./assets/contact-gmail-mobile-animated.svg">
-      <img src="./assets/contact-gmail-animated.svg" alt="Gmail: borbon.rchr@gmail.com" width="100%">
-    </picture>
-  </a>
+<p align="center">
+<a href="https://www.facebook.com/ralphchrr"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook.svg">
+<img src="./assets/contact-facebook-animated.svg" alt="Facebook: @ralphchrr" width="260">
+</picture></a>
+<a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin.svg">
+<img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: Ralph Christian Borbon" width="260">
+</picture></a>
+<a href="mailto:borbon.rchr@gmail.com"><picture>
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail.svg">
+<img src="./assets/contact-gmail-animated.svg" alt="Gmail: borbon.rchr@gmail.com" width="260">
+</picture></a>
 </p>

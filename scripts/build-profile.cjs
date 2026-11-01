@@ -6,7 +6,7 @@ const {SVG,esc}=require('./lib/svg.cjs');
 const {flow,background,stage,terminal}=require('./lib/motion.cjs');
 const {banner}=require('./lib/banner.cjs');
 const {build:projects}=require('./lib/projects.cjs');
-const {consistency,activity,monkeytype,hackerrank}=require('./lib/stats.cjs');
+const {consistency,activity,leetcode,monkeytype,hackerrank}=require('./lib/compact-stats.cjs');
 const C={ink:'#09090F',ivory:'#F0E9DD',silver:'#C5C6D0',cyan:'#8EBBEE',purple:'#8B5CF6',red:'#EF7583'};
 function panel(w,h,title,desc){const s=new SVG(w,h,title,desc);s.add(`<rect width="${w}" height="${h}" fill="${C.ink}"/>`);return s;}
 function words(s,text,x,y,size,maxWidth,font='body',color=C.silver,lineHeight=size*1.6){
@@ -21,27 +21,21 @@ function words(s,text,x,y,size,maxWidth,font='body',color=C.silver,lineHeight=si
 function finish(s,animated){s.parts.splice(1,0,background(s.w,s.h,false));s.add(flow(s.w,s.h,false));return s.finish();}
 function label(s,text,x,y){s.add(s.text(text,x,y,18,'mono',C.cyan,.5));}
 function heading(mobile,animated,number,title,annotation){
-  const w=mobile?600:1200,s=panel(w,140,title,annotation),p=mobile?32:48;
-  label(s,annotation,p,42);
-  s.add(s.text(title,p,108,mobile?44:56,'display',C.ivory,-.8));
-  if(!mobile)s.add(s.text('RC_',w-48,104,26,'mono',C.purple,0,false,'end'));
-  if(animated)s.add(`<path d="M${p} 128h${mobile?160:240}" pathLength="100" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="100;0;0;-100;100" keyTimes="0;.15;.8;.95;1" dur="12s" repeatCount="indefinite"/></path>`);
-  return finish(s,animated);
+  const w=mobile?600:1200,p=mobile?32:36,s=panel(w,90,title,annotation);
+  s.add(s.text(annotation,p,22,14,'mono',C.cyan,.4));
+  s.add(s.text(title,p,66,mobile?40:46,'display',C.ivory,-.5));
+  s.add(`<path d="M${p} 80h${mobile?120:180}" stroke="#8B5CF6" stroke-width="1.5"/>`);
+  if(animated)s.add(`<path d="M${p} 80h${mobile?120:180}" pathLength="100" stroke="#8EBBEE" stroke-dasharray="18 82"><animate attributeName="stroke-dashoffset" from="100" to="-100" dur="9s" repeatCount="indefinite"/></path>`);
+  return s.finish();
 }
 function identity(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?550:390,'Ralph Christian Borbon','Computer Science - II student at UP Cebu, based in Cebu, Philippines. Interests: software development, design, AI, games, and cybersecurity.');
-  label(s,'THE PERSON BEHIND RC_',p,46);
-  const nameStart=s.parts.length;
-  if(mobile){s.add(s.text('Ralph Christian',p,119,56));s.add(s.text('Borbon',p,180,56));}
-  else s.add(s.text('Ralph Christian Borbon',p,127,64,'display',C.ivory,-1));
-  const name=s.parts.splice(nameStart).join('');s.add(stage(name,animated,{id:'identity-name',duration:22,dy:8,min:.5}));
-  const y=mobile?234:184;
-  label(s,'UP CEBU . COMPUTER SCIENCE - II',p,y);
-  const copyStart=s.parts.length;
-  words(s,'I write code, shape visual identities, and build interactive experiences.',p,y+56,mobile?24:25,mobile?536:1000,'mono',C.ivory,38);
-  const copy=s.parts.splice(copyStart).join('');s.add(terminal(s,copy,animated,p,y+24,w-p*2,mobile?154:112));
-  words(s,'Software development / Design / AI / Games / Cybersecurity',p,mobile?450:344,mobile?20:20,w-p*2,'mono',C.cyan,34);
-  return finish(s,animated);
+  const w=mobile?600:1200,p=mobile?32:36,s=panel(w,mobile?210:144,'Maker notes','UP Cebu . Computer Science - II, based in Cebu, Philippines. Software development, design, AI, games, and cybersecurity.');
+  s.add(`<path d="M14 16v${s.h-32}" stroke="#8B5CF6" stroke-opacity=".5"/>`);
+  s.add(s.text('UP CEBU . COMPUTER SCIENCE - II',p,30,mobile?20:18,'mono',C.cyan,.2));
+  words(s,'I write code, shape visual identities, and build interactive experiences.',p,mobile?76:72,mobile?23:22,w-p*2,'mono',C.ivory,mobile?32:30);
+  words(s,'Software development / Design / AI / Games / Cybersecurity',p,mobile?152:116,mobile?19:18,w-p*2,'mono',C.silver,30);
+  if(animated)s.add(`<path d="M${w-20} 19v14" stroke="#8EBBEE"><animate attributeName="visibility" values="visible;hidden;visible" calcMode="discrete" dur=".9s" repeatCount="indefinite"/></path>`);
+  return s.finish();
 }
 const groups=[
  ['LANGUAGES',[['c','C'],['cplusplus','C++'],['css','CSS'],['haskell','Haskell'],['html5','HTML'],['javascript','JavaScript'],['kotlin','Kotlin'],['python','Python'],['typescript','TypeScript']]],
@@ -52,11 +46,11 @@ const groups=[
  ['VIDEO & MOTION',[['adobeaftereffects','Adobe After Effects'],['adobepremierepro','Adobe Premiere Pro']]]
 ];
 function toolkit(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?1085:640,'Toolkit',groups.map(g=>g[0]+': '+g[1].map(v=>v[1]).join(', ')).join('. '));
-  const positions=mobile?[40,250,416,582,748,914]:[40,40,250,250,444,444];
+  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?560:360,'Toolkit',groups.map(g=>g[0]+': '+g[1].map(v=>v[1]).join(', ')).join('. '));
+  const positions=mobile?[30,30,250,250,400,400]:[26,26,148,148,270,270];
   groups.forEach(([name,icons],i)=>{
-    const x=mobile?p:(i%2===0?p:660),y=positions[i],cols=mobile?7:7,size=mobile?60:56,gap=mobile?16:20;
-    label(s,name,x,y);
+    const x=mobile?(i%2===0?32:312):(i%2===0?36:636),y=positions[i],cols=mobile?4:9,size=48,gap=mobile?10:10;
+    s.add(s.text(name,x,y,mobile?16:16,'mono',C.cyan,.1));
     icons.forEach(([slug,title],j)=>{
       const ix=x+(j%cols)*(size+gap),iy=y+24+Math.floor(j/cols)*(size+12);
       const source=fs.readFileSync(path.join(root,'assets/stack',slug+'.svg'),'utf8');
@@ -68,54 +62,27 @@ function toolkit(mobile,animated){
   return finish(s,animated);
 }
 function beyond(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?700:400,'Beyond the code','Marketing Director of the UP Computer Science Guild, seasonal tutor (calculus and programming), freelance graphic designer (Pubmats and VFX), and competitive esports player (Tier 2 CODM Esports Player).');
-  const roles=[['01','Marketing Director','UP COMPUTER SCIENCE GUILD'],['02','Seasonal Tutor','(calculus and programming)'],['03','Freelance Graphic Designer','(Pubmats and VFX)'],['04','Competitive Esports Player','(Tier 2 CODM Esports Player)']];
-  roles.forEach(([num,title,sub],i)=>{
-    const x=mobile?p:(i%2===0?p:660),y=mobile?26+i*164:32+Math.floor(i/2)*180;
-    const roleStart=s.parts.length;
-    const end=words(s,title,x,y+46,mobile?34:32,mobile?536:490,'display',C.ivory,42);
-    if(sub)s.add(s.text(sub,x,end+34,mobile?20:18,'mono',C.cyan));
-    s.add(`<path d="M${x} ${end+64}h${mobile?536:490}" stroke="${C.silver}" stroke-opacity=".15"/>`);
-    const role=s.parts.splice(roleStart).join('');s.add(stage(role,animated,{id:'role-'+i,duration:24,delay:i*.25,dx:i%2?10:-10,dy:0,min:.3}));
+  const w=mobile?600:1200,p=mobile?32:36,s=panel(w,mobile?190:112,'Parallel pursuits','Marketing Director of the UP Computer Science Guild. Seasonal tutor: calculus and programming. Freelance graphic designer: Pubmats and VFX. Competitive esports player: Tier 2 CODM.');
+  s.add(s.text('PARALLEL PURSUITS',p,20,14,'mono',C.purple,.4));
+  const roles=[['Marketing Director','UP Computer Science Guild'],['Seasonal Tutor','Calculus / programming'],['Graphic Designer','Freelance / Pubmats / VFX'],['Esports Player','Tier 2 CODM / competitive']];
+  roles.forEach(([title,sub],i)=>{
+    const x=mobile?p+(i%2)*280:p+i*282,y=mobile?56+Math.floor(i/2)*78:56;
+    const content=s.text(title,x,y,mobile?20:22,'display',C.ivory,-.2)+s.text(sub,x,y+27,mobile?15:14,'mono',C.silver);
+    s.add(stage(content,animated,{id:'pursuit-'+i,duration:22,delay:i*.2,dx:2,dy:0}));
   });
-  return finish(s,animated);
+  return s.finish();
 }
 function linkCard(mobile,title,subtitle,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,110,title,subtitle);
-  s.add(`<rect x=".5" y=".5" width="${w-1}" height="109" fill="none" stroke="#8B5CF6" stroke-opacity=".25"/>`);
-  label(s,title,p,45);
-  s.add(s.text(subtitle,p,82,mobile?22:23,'mono',C.ivory));
-  const arrow=s.text('->',w-p-8,65,26,'mono',C.cyan,0,false,'end');
-  s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="-8 0;0 0;8 0;0 0;-8 0" dur="5s" repeatCount="indefinite"/></g>`:arrow);
-  return finish(s,animated);
-}
-function leetcode(mobile,animated){
-  const data=JSON.parse(fs.readFileSync(root+'/assets/data/leetcode.json','utf8'));
-  const w=mobile?600:1200,p=mobile?32:48,h=mobile?630:365;
-  const s=panel(w,h,'LeetCode / ralphchr',`${data.solved} solved. `+Object.entries(data.difficulties).map(([name,d])=>name+': '+d.solved+' / '+d.available).join('. ')+`. Ranking ${data.ranking}. Updated ${data.updated} UTC. Public data via LeetCode Stats Card.`);
-  label(s,'@RALPHCHR / LEETCODE',p,44);
-  const cx=mobile?134:155,cy=mobile?188:190,r=mobile?90:100;
-  s.add(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${C.purple}" stroke-opacity=".18" stroke-width="3"/>`);
-  let start=-90;
-  Object.entries(data.difficulties).forEach(([name,d],i)=>{
-    const share=data.solved?d.solved/data.solved:0,circ=2*Math.PI*r;
-    if(share)s.add(`<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${[C.cyan,C.purple,C.red][i]}" stroke-width="4" stroke-dasharray="${Math.max(0,share*circ-5)} ${circ}" transform="rotate(${start} ${cx} ${cy})"/>`);
-    start+=share*360;
-  });
-  s.add(s.text(String(data.solved),cx+s.measure(String(data.solved),68)/2,cy+16,68,'display',C.ivory,0,false,'end'));
-  s.add(s.text('SOLVED',cx+s.measure('SOLVED',16,'mono')/2,cy+45,16,'mono',C.silver,0,false,'end'));
-  const rx=mobile?270:320;
-  label(s,'GLOBAL RANK',rx,mobile?168:151);
-  s.add(s.text('#'+data.ranking.toLocaleString('en-US'),rx,mobile?210:198,mobile?28:32,'display',C.ivory,-.3));
-  Object.entries(data.difficulties).forEach(([name,d],i)=>{
-    const x=mobile?p:660,y=(mobile?344:104)+i*(mobile?82:70),barW=mobile?536:492,color=[C.cyan,C.purple,C.red][i];
-    s.add(s.text(name.toUpperCase(),x,y,18,'mono',color));
-    s.add(s.text(`${d.solved} / ${d.available}`,x+barW,y,18,'mono',C.ivory,0,false,'end'));
-    s.add(`<path d="M${x} ${y+20}h${barW}" stroke="#1D2030" stroke-width="5"/><path d="M${x} ${y+20}h${barW*d.solved/d.available}" stroke="${color}" stroke-width="5" pathLength="100" stroke-dasharray="100">${animated?'<animate attributeName="stroke-dashoffset" values="100;0;0;100;100" keyTimes="0;.15;.86;.96;1" dur="17s" repeatCount="indefinite"/>':''}</path>`);
-  });
-  s.add(s.text('UPDATED '+data.updated+' UTC',p,h-25,16,'mono',C.silver));
-  if(animated)for(let i=0;i<3;i++)s.add(`<rect x="${w-125+i*25}" y="27" width="9" height="9" fill="#8B5CF6"><animate attributeName="opacity" values=".15;1;.15;.15" keyTimes="0;.2;.4;1" dur="3s" begin="${i*.3}s" repeatCount="indefinite"/></rect>`);
-  return finish(s,animated);
+  const s=panel(400,120,title,subtitle),slug=title.toLowerCase();
+  s.add('<rect x=".5" y=".5" width="399" height="119" rx="6" fill="#101124" stroke="#8B5CF6" stroke-opacity=".5"/><path d="M6 0H394Q400 0 400 6V29H0V6Q0 0 6 0Z" fill="#29204F"/>');
+  s.add(s.text('$ open '+slug+'.',16,20,16,'mono',C.cyan));
+  if(slug==='facebook')s.add('<g transform="translate(16 47) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#F0E9DD"/></g>');
+  if(slug==='linkedin')s.add(s.text('in',18,88,40,'display',C.ivory,-1));
+  if(slug==='gmail')s.add('<g transform="translate(16 47) scale(.55)"><path d="M15 24h50v33H15Z M15 25l25 19 25-19" fill="none" stroke="#F0E9DD" stroke-width="4" stroke-linejoin="round"/></g>');
+  s.add(s.text(title,78,66,26,'display',C.ivory));s.add(s.text(subtitle,78,93,16,'mono',C.silver));
+  const arrow=s.text('->',374,77,25,'mono',C.cyan,0,false,'end');
+  s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="0 0;3 0;0 0" calcMode="discrete" dur="2s" repeatCount="indefinite"/></g>`:arrow);
+  return s.finish();
 }
 function write(stem,fn){
   for(const mobile of [false,true])for(const animated of [false,true]){
@@ -136,8 +103,8 @@ if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-on
   write('project-index',projects);
   write('toolkit',toolkit);
   write('beyond-code',beyond);
-  const headings=[['selected-heading','','Projects so far','BUILT / BUILDING / EXPLORING'],['toolkit-heading','','The toolkit','TOOLS OF THE PRACTICE'],['github-heading','','On GitHub','CONSISTENCY & ACTIVITY'],['leetcode-heading','','Problem solving','LEETCODE / IN PRACTICE'],['hackerrank-heading','','On HackerRank','CHALLENGES / PUBLIC TRACK STATS'],['monkeytype-heading','','At the keyboard','MONKEYTYPE / PERSONAL BESTS'],['beyond-heading','','Beyond the code','OTHER SIDES OF ME'],['connect-heading','',"Let’s connect",'FIND ME ELSEWHERE']];
+  const headings=[['selected-heading','','The build log','IDEAS GIVEN FORM'],['toolkit-heading','','Instruments of craft','CODE / SYSTEMS / DESIGN'],['github-heading','','Signals from the lab','GITHUB / LEETCODE / HACKERRANK / MONKEYTYPE'],['connect-heading','','Open a channel','FIND ME ON THE OTHER SIDE']];
   for(const [stem,num,title,annotation] of headings)write(stem,(m,a)=>heading(m,a,num,title,annotation));
-  for(const [slug,title,sub] of [['facebook','FACEBOOK','@ralphchrr'],['linkedin','LINKEDIN','Ralph Christian Borbon'],['gmail','GMAIL','borbon.rchr@gmail.com']])write('contact-'+slug,(m,a)=>linkCard(m,title,sub,a));
+  for(const [slug,title,sub] of [['facebook','Facebook','Find me online'],['linkedin','LinkedIn','Say hello'],['gmail','Gmail','Start a conversation']])write('contact-'+slug,(m,a)=>linkCard(m,title,sub,a));
 }
 console.log('Built outlined profile artwork, native SVG motion and reduced-motion versions.');
