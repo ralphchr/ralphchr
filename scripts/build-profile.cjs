@@ -22,7 +22,7 @@ function finish(s,animated){s.parts.splice(1,0,background(s.w,s.h,false));s.add(
 function label(s,text,x,y){s.add(s.text(text,x,y,18,'mono',C.cyan,.5));}
 function heading(mobile,animated,number,title,annotation){
   const w=mobile?600:1200,s=panel(w,140,title,annotation),p=mobile?32:48;
-  label(s,(number?number+' / ':'')+annotation,p,42);
+  label(s,annotation,p,42);
   s.add(s.text(title,p,108,mobile?44:56,'display',C.ivory,-.8));
   if(!mobile)s.add(s.text('RC_',w-48,104,26,'mono',C.purple,0,false,'end'));
   if(animated)s.add(`<path d="M${p} 128h${mobile?160:240}" pathLength="100" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="100;0;0;-100;100" keyTimes="0;.15;.8;.95;1" dur="12s" repeatCount="indefinite"/></path>`);
@@ -30,7 +30,7 @@ function heading(mobile,animated,number,title,annotation){
 }
 function identity(mobile,animated){
   const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?550:390,'Ralph Christian Borbon','Computer Science - II student at UP Cebu, based in Cebu, Philippines. Interests: software development, design, AI, games, and cybersecurity.');
-  label(s,'00 / THE PERSON BEHIND RC_',p,46);
+  label(s,'THE PERSON BEHIND RC_',p,46);
   const nameStart=s.parts.length;
   if(mobile){s.add(s.text('Ralph Christian',p,119,56));s.add(s.text('Borbon',p,180,56));}
   else s.add(s.text('Ralph Christian Borbon',p,127,64,'display',C.ivory,-1));
@@ -68,12 +68,11 @@ function toolkit(mobile,animated){
   return finish(s,animated);
 }
 function beyond(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?780:450,'Beyond the code','Marketing Director of the UP Computer Science Guild, seasonal tutor (calculus and programming), freelance graphic designer (Pubmats and VFX), and competitive esports player (Tier 2 CODM Esports Player).');
+  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?700:400,'Beyond the code','Marketing Director of the UP Computer Science Guild, seasonal tutor (calculus and programming), freelance graphic designer (Pubmats and VFX), and competitive esports player (Tier 2 CODM Esports Player).');
   const roles=[['01','Marketing Director','UP COMPUTER SCIENCE GUILD'],['02','Seasonal Tutor','(calculus and programming)'],['03','Freelance Graphic Designer','(Pubmats and VFX)'],['04','Competitive Esports Player','(Tier 2 CODM Esports Player)']];
   roles.forEach(([num,title,sub],i)=>{
-    const x=mobile?p:(i%2===0?p:660),y=mobile?60+i*178:65+Math.floor(i/2)*190;
+    const x=mobile?p:(i%2===0?p:660),y=mobile?26+i*164:32+Math.floor(i/2)*180;
     const roleStart=s.parts.length;
-    s.add(s.text(num,x,y,18,'mono',C.purple));
     const end=words(s,title,x,y+46,mobile?34:32,mobile?536:490,'display',C.ivory,42);
     if(sub)s.add(s.text(sub,x,end+34,mobile?20:18,'mono',C.cyan));
     s.add(`<path d="M${x} ${end+64}h${mobile?536:490}" stroke="${C.silver}" stroke-opacity=".15"/>`);
@@ -81,14 +80,13 @@ function beyond(mobile,animated){
   });
   return finish(s,animated);
 }
-function linkCard(mobile,title,subtitle,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,110,title,subtitle);
-  s.add(`<rect x=".5" y=".5" width="${w-1}" height="109" fill="none" stroke="#8B5CF6" stroke-opacity=".25"/>`);
-  label(s,title,p,45);
-  s.add(s.text(subtitle,p,82,mobile?22:23,'mono',C.ivory));
-  const arrow=s.text('->',w-p-8,65,26,'mono',C.cyan,0,false,'end');
-  s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="-8 0;0 0;8 0;0 0;-8 0" dur="5s" repeatCount="indefinite"/></g>`:arrow);
-  return finish(s,animated);
+function contactIcon(slug,title){
+  const s=panel(80,80,title,title+' profile or email link');
+  s.add('<rect x=".5" y=".5" width="79" height="79" rx="9" fill="#11141F" stroke="#8B5CF6" stroke-opacity=".5"/>');
+  if(slug==='facebook')s.add('<path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#8EBBEE"/>');
+  if(slug==='linkedin')s.add(s.text('in',15,59,50,'display','#8EBBEE',-1));
+  if(slug==='gmail')s.add('<path d="M15 24h50v33H15Z" fill="none" stroke="#C5C6D0" stroke-width="2"/><path d="M15 57V25l25 19 25-19v32M15 25l25 19 25-19" fill="none" stroke="#8EBBEE" stroke-width="5" stroke-linejoin="round"/>');
+  return s.finish();
 }
 function leetcode(mobile,animated){
   const data=JSON.parse(fs.readFileSync(root+'/assets/data/leetcode.json','utf8'));
@@ -136,8 +134,8 @@ if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-on
   write('project-index',projects);
   write('toolkit',toolkit);
   write('beyond-code',beyond);
-  const headings=[['selected-heading','01','Selected work','IDEAS INTO INTERFACES'],['toolkit-heading','02','The toolkit','TOOLS OF THE PRACTICE'],['github-heading','03','On GitHub','CONSISTENCY & ACTIVITY'],['leetcode-heading','04','Problem solving','LEETCODE / IN PRACTICE'],['monkeytype-heading','05','At the keyboard','MONKEYTYPE / PERSONAL BESTS'],['beyond-heading','06','Beyond the code','OTHER SIDES OF ME'],['connect-heading','07',"Let’s connect",'FIND ME ELSEWHERE']];
+  const headings=[['selected-heading','','Selected work','IDEAS INTO INTERFACES'],['toolkit-heading','','The toolkit','TOOLS OF THE PRACTICE'],['github-heading','','On GitHub','CONSISTENCY & ACTIVITY'],['leetcode-heading','','Problem solving','LEETCODE / IN PRACTICE'],['monkeytype-heading','','At the keyboard','MONKEYTYPE / PERSONAL BESTS'],['beyond-heading','','Beyond the code','OTHER SIDES OF ME'],['connect-heading','',"Let’s connect",'FIND ME ELSEWHERE']];
   for(const [stem,num,title,annotation] of headings)write(stem,(m,a)=>heading(m,a,num,title,annotation));
-  for(const [slug,title,sub] of [['facebook','FACEBOOK','@ralphchrr'],['linkedin','LINKEDIN','Ralph Christian Borbon'],['gmail','GMAIL','borbon.rchr@gmail.com']])write('contact-'+slug,(m,a)=>linkCard(m,title,sub,a));
+  for(const [slug,title] of [['facebook','Facebook'],['linkedin','LinkedIn'],['gmail','Gmail']])fs.writeFileSync(root+'/assets/contact-'+slug+'.svg',contactIcon(slug,title));
 }
 console.log('Built outlined profile artwork, native SVG motion and reduced-motion versions.');

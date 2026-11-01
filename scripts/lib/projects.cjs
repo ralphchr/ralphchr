@@ -27,7 +27,7 @@ function build(mobile,animated=false){
  s.add(`<rect width="${width}" height="${height}" fill="#09090F"/>`);
  s.add(background(width,height,false));
  s.add(`<path d="M${mobile?32:30} 0H${width-(mobile?32:30)}" stroke="#8B5CF6" stroke-width="2"/>`);
- s.add(s.text(mobile?'PROJECT INDEX / 01-'+String(projects.length).padStart(2,'0'):'PROJECT / DOMAIN',mobile?32:84,mobile?42:35,mobile?20:14,'mono','#C5C6D0',.6));
+ s.add(s.text(mobile?'PROJECT INDEX':'PROJECT / DOMAIN',mobile?32:48,mobile?42:35,mobile?20:14,'mono','#C5C6D0',.6));
  if(!mobile)s.add(s.text('STACK / APPROACH',740,35,14,'mono','#C5C6D0',.6));
  const font=mobile?20:14,chipHeight=mobile?40:29,icon=mobile?21:15,gap=mobile?9:8,padding=mobile?11:9,chipGap=mobile?8:7;
  function chip(slug,label,x,y){
@@ -42,16 +42,14 @@ function build(mobile,animated=false){
   const rowStart=s.parts.length;
   s.add(`<path d="M${mobile?32:30} ${y+rowHeight-1}H${width-(mobile?32:30)}" stroke="#C5C6D0" stroke-opacity=".16"/>`);
   if(mobile){
-   s.add(s.text(String(i+1).padStart(2,'0'),32,y+38,18,'mono','#8B5CF6'));
-   s.add(s.text(p.name,82,y+39,36,'display','#F0E9DD',-.7));
-   s.add(s.text(p.domain,82,y+76,20,'mono','#8EBBEE',.4));
+   s.add(s.text(p.name,32,y+39,36,'display','#F0E9DD',-.7));
+   s.add(s.text(p.domain,32,y+76,20,'mono','#8EBBEE',.4));
    let x=32;
    p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+97)+chipGap;});
    if(x-chipGap>width-32)throw Error('Mobile chips exceed margin '+p.name+' '+x);
   }else{
-   s.add(s.text(String(i+1).padStart(2,'0'),30,y+38,14,'mono','#8B5CF6'));
-   s.add(s.text(p.name,84,y+39,28,'display','#F0E9DD',-.5));
-   s.add(s.text(p.domain,84,y+66,14,'mono','#8EBBEE',.6));
+   s.add(s.text(p.name,48,y+39,28,'display','#F0E9DD',-.5));
+   s.add(s.text(p.domain,48,y+66,14,'mono','#8EBBEE',.6));
    let x=740;
    p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+27)+chipGap;});
    if(x-chipGap>width-30)throw Error('Desktop chips exceed margin '+p.name);
