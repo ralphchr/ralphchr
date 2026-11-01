@@ -107,7 +107,7 @@ if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-on
   write('project-index',projects);
   write('toolkit',toolkit);
   write('beyond-code',beyond);
-  const headings=[['selected-heading','','The build log','IDEAS GIVEN FORM'],['toolkit-heading','','Instruments of craft','CODE / SYSTEMS / DESIGN'],['github-heading','','Signals from the lab','GITHUB / LEETCODE / HACKERRANK / MONKEYTYPE'],['connect-heading','','Open a channel','FIND ME ON THE OTHER SIDE']];
+  const headings=[['selected-heading','','The build log','IDEAS GIVEN FORM'],['toolkit-heading','','Instruments of craft','CODE / SYSTEMS / DESIGN'],['github-heading','','Traces of progress','GITHUB / LEETCODE / HACKERRANK / MONKEYTYPE'],['connect-heading','','Open a channel','FIND ME ON THE OTHER SIDE']];
   for(const [stem,num,title,annotation] of headings)write(stem,(m,a)=>heading(m,a,num,title,annotation));
   for(const [slug,title,sub] of [['facebook','Facebook','@ralphchrr'],['linkedin','LinkedIn','Trade ideas'],['gmail','Gmail','borbon.rchr@gmail.com']])write('contact-'+slug,(m,a)=>linkCard(m,title,sub,a));
 }

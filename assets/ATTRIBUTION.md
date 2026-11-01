@@ -12,7 +12,7 @@ Technology icons come from [Simple Icons 16.0.0](https://github.com/simple-icons
 
 “The build log” contains all six documented projects in their established order, with LazyFill below RELAYA. Descriptions and stacks come from the portfolio, resume, direct user updates and LazyFill source. RELAYA shows its documented AI approach because no implementation language was provided. Unavailable project links are omitted. Previously supplied logos and game screens remain under `projects/` as unused references.
 
-“Instruments of craft” groups the same language, development, security and design icons in a denser grid. “Signals from the lab” groups four independently linked, 198px-wide public-stat cards; they wrap naturally on smaller viewports. A shallow contribution chart sits beneath the cards. No native Markdown table or custom CSS is required.
+“Instruments of craft” groups the same language, development, security and design icons in a denser grid. “Traces of progress” groups four independently linked, 198px-wide public-stat cards; they wrap naturally on smaller viewports. A shallow contribution chart sits beneath the cards. No native Markdown table or custom CSS is required.
 
 The large repeated-name biography is replaced with a compact continuation below the banner: “UP CEBU . COMPUTER SCIENCE - II,” a brief monospaced manifesto, and interests. The full name appears in the banner. “Parallel pursuits” compresses the four roles into one desktop row and two columns on phones: UPCSG Marketing Director; seasonal tutor in calculus/programming; freelance graphic designer for Pubmats/VFX; competitive Tier 2 CODM esports player. All role details are supplied directly by Ralph.
 

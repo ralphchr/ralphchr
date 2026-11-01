@@ -72,7 +72,7 @@
 <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/github-heading-mobile.svg">
 <source media="(prefers-reduced-motion: reduce)" srcset="./assets/github-heading.svg">
 <source media="(max-width: 600px)" srcset="./assets/github-heading-mobile-animated.svg">
-<img src="./assets/github-heading-animated.svg" alt="Signals from the lab / GitHub, LeetCode, HackerRank, Monkeytype" width="100%">
+<img src="./assets/github-heading-animated.svg" alt="Traces of progress / GitHub, LeetCode, HackerRank, Monkeytype" width="100%">
 </picture></p>
 
 <p align="center">
