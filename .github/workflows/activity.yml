@@ -9,6 +9,7 @@ on:
       - scripts/update-activity.py
       - scripts/update-leetcode.py
       - scripts/update-monkeytype.py
+      - scripts/update-hackerrank.py
       - scripts/build-profile.cjs
       - scripts/lib/**
       - .github/workflows/activity.yml
@@ -37,11 +38,14 @@ jobs:
           python3 scripts/update-leetcode.py
       - name: Refresh public Monkeytype stats
         run: python3 scripts/update-monkeytype.py
+      - name: Refresh public HackerRank stats
+        continue-on-error: true
+        run: python3 scripts/update-hackerrank.py
       - name: Render themed profile cards
         run: node scripts/build-profile.cjs --stats-only
       - name: Commit statistics changes
         run: |
-          git add assets/data/ assets/activity*.svg assets/consistency*.svg assets/leetcode*.svg assets/monkeytype*.svg
+          git add assets/data/ assets/activity*.svg assets/consistency*.svg assets/leetcode*.svg assets/monkeytype*.svg assets/hackerrank*.svg
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
