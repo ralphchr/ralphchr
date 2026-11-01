@@ -143,10 +143,10 @@
 <img src="./assets/contact-facebook-animated.svg" alt="Facebook: @ralphchrr" width="260">
 </picture></a>
 <a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/contact-linkedin-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin.svg">
-<img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: RALPH CHRISTIAN BORBON" width="260">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-name-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/contact-linkedin-name-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-name.svg">
+<img src="./assets/contact-linkedin-name-animated.svg" alt="LinkedIn: RALPH CHRISTIAN BORBON" width="260">
 </picture></a>
 <a href="mailto:borbon.rchr@gmail.com"><picture>
 <source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail-light.svg">
