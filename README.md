@@ -12,7 +12,7 @@
     <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/profile-intro-mobile.svg">
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/profile-intro.svg">
     <source media="(max-width: 600px)" srcset="./assets/profile-intro-mobile-animated.svg">
-    <img src="./assets/profile-intro-animated.svg" alt="Ralph Christian Borbon. Computer Science student at UP Cebu, based in Cebu, Philippines. I write code, shape visual identities, and build interactive experiences. Interests: software development, design, AI, games, and cybersecurity." width="100%">
+    <img src="./assets/profile-intro-animated.svg" alt="Ralph Christian Borbon. Computer Science - II student at UP Cebu, based in Cebu, Philippines. I write code, shape visual identities, and build interactive experiences. Interests: software development, design, AI, games, and cybersecurity." width="100%">
   </picture>
 </p>
 
@@ -137,7 +137,7 @@
     <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/beyond-code-mobile.svg">
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/beyond-code.svg">
     <source media="(max-width: 600px)" srcset="./assets/beyond-code-mobile-animated.svg">
-    <img src="./assets/beyond-code-animated.svg" alt="Marketing Director of the UP Computer Science Guild. Seasonal Tutor. Freelance Graphic Designer. Competitive Esports Player (Tier 2 CODM Esports Player)." width="100%">
+    <img src="./assets/beyond-code-animated.svg" alt="Marketing Director of the UP Computer Science Guild. Seasonal Tutor (calculus and programming). Freelance Graphic Designer (Pubmats and VFX). Competitive Esports Player (Tier 2 CODM Esports Player)." width="100%">
   </picture>
 </p>
 
