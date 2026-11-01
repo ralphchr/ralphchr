@@ -3,7 +3,7 @@ const fs=require('node:fs');
 const path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const {SVG,esc}=require('./lib/svg.cjs');
-const {flow,background,glitch}=require('./lib/motion.cjs');
+const {flow,background,stage,terminal}=require('./lib/motion.cjs');
 const {banner}=require('./lib/banner.cjs');
 const {build:projects}=require('./lib/projects.cjs');
 const {consistency,activity,monkeytype}=require('./lib/stats.cjs');
@@ -18,24 +18,29 @@ function words(s,text,x,y,size,maxWidth,font='body',color=C.silver,lineHeight=si
   if(line)s.add(s.text(line,x,y,size,font,color));
   return y;
 }
-function finish(s,animated){s.parts.splice(1,0,background(s.w,s.h,animated));s.add(flow(s.w,s.h,animated));s.add(glitch(s,animated));return s.finish();}
+function finish(s,animated){s.parts.splice(1,0,background(s.w,s.h,false));s.add(flow(s.w,s.h,false));return s.finish();}
 function label(s,text,x,y){s.add(s.text(text,x,y,18,'mono',C.cyan,.5));}
 function heading(mobile,animated,number,title,annotation){
   const w=mobile?600:1200,s=panel(w,140,title,annotation),p=mobile?32:48;
   label(s,(number?number+' / ':'')+annotation,p,42);
   s.add(s.text(title,p,108,mobile?44:56,'display',C.ivory,-.8));
   if(!mobile)s.add(s.text('RC_',w-48,104,26,'mono',C.purple,0,false,'end'));
+  if(animated)s.add(`<path d="M${p} 128h${mobile?160:240}" pathLength="100" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="100" stroke-dashoffset="0"><animate attributeName="stroke-dashoffset" values="100;0;0;-100;100" keyTimes="0;.15;.8;.95;1" dur="12s" repeatCount="indefinite"/></path>`);
   return finish(s,animated);
 }
 function identity(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?500:335,'Ralph Christian Borbon','Computer Science student at UP Cebu, based in Cebu, Philippines. Interests: software development, design, AI, games, and cybersecurity.');
+  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?550:390,'Ralph Christian Borbon','Computer Science - II student at UP Cebu, based in Cebu, Philippines. Interests: software development, design, AI, games, and cybersecurity.');
   label(s,'00 / THE PERSON BEHIND RC_',p,46);
+  const nameStart=s.parts.length;
   if(mobile){s.add(s.text('Ralph Christian',p,119,56));s.add(s.text('Borbon',p,180,56));}
   else s.add(s.text('Ralph Christian Borbon',p,127,64,'display',C.ivory,-1));
-  const y=mobile?234:179;
-  label(s,'UP CEBU / COMPUTER SCIENCE',p,y);
-  words(s,'I write code, shape visual identities, and build interactive experiences.',p,y+51,mobile?26:28,w-p*2,'body',C.ivory);
-  words(s,'Software development / Design / AI / Games / Cybersecurity',p,mobile?418:294,mobile?20:20,w-p*2,'mono',C.cyan,34);
+  const name=s.parts.splice(nameStart).join('');s.add(stage(name,animated,{id:'identity-name',duration:22,dy:8,min:.5}));
+  const y=mobile?234:184;
+  label(s,'UP CEBU / COMPUTER SCIENCE - II',p,y);
+  const copyStart=s.parts.length;
+  words(s,'I write code, shape visual identities, and build interactive experiences.',p,y+56,mobile?24:25,mobile?536:1000,'mono',C.ivory,38);
+  const copy=s.parts.splice(copyStart).join('');s.add(terminal(s,copy,animated,p,y+24,w-p*2,mobile?154:112));
+  words(s,'Software development / Design / AI / Games / Cybersecurity',p,mobile?450:344,mobile?20:20,w-p*2,'mono',C.cyan,34);
   return finish(s,animated);
 }
 const groups=[
@@ -47,8 +52,8 @@ const groups=[
  ['VIDEO & MOTION',[['adobeaftereffects','Adobe After Effects'],['adobepremierepro','Adobe Premiere Pro']]]
 ];
 function toolkit(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?1010:570,'Toolkit',groups.map(g=>g[0]+': '+g[1].map(v=>v[1]).join(', ')).join('. '));
-  const positions=mobile?[40,238,390,542,694,846]:[40,40,218,218,396,396];
+  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?1085:640,'Toolkit',groups.map(g=>g[0]+': '+g[1].map(v=>v[1]).join(', ')).join('. '));
+  const positions=mobile?[40,250,416,582,748,914]:[40,40,250,250,444,444];
   groups.forEach(([name,icons],i)=>{
     const x=mobile?p:(i%2===0?p:660),y=positions[i],cols=mobile?7:7,size=mobile?60:56,gap=mobile?16:20;
     label(s,name,x,y);
@@ -56,20 +61,23 @@ function toolkit(mobile,animated){
       const ix=x+(j%cols)*(size+gap),iy=y+24+Math.floor(j/cols)*(size+12);
       const source=fs.readFileSync(path.join(root,'assets/stack',slug+'.svg'),'utf8');
       const inner=source.slice(source.indexOf('>')+1,source.lastIndexOf('</svg>')).replace(/<!--.*?-->/gs,'');
-      s.add(`<g transform="translate(${ix} ${iy}) scale(${size/48})"><title>${esc(title)}</title>${inner}</g>`);
+      const boot=animated?`<rect x="1" y="1" width="46" height="46" rx="3" fill="none" stroke="#8EBBEE" stroke-width="1.3" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"><animate attributeName="stroke-dashoffset" values="100;0;0;-100;100" keyTimes="0;.12;.22;.34;1" dur="${12+i}s" begin="${j*.2}s" repeatCount="indefinite"/></rect>`:'';
+      s.add(`<g transform="translate(${ix} ${iy}) scale(${size/48})"><title>${esc(title)}</title>${inner}${boot}</g>`);
     });
   });
   return finish(s,animated);
 }
 function beyond(mobile,animated){
-  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?650:380,'Beyond the code','Marketing Director of the UP Computer Science Guild, seasonal tutor, freelance graphic designer, and competitive esports player (Tier 2 CODM Esports Player).');
-  const roles=[['01','Marketing Director','UP COMPUTER SCIENCE GUILD'],['02','Seasonal Tutor',''],['03','Freelance Graphic Designer',''],['04','Competitive Esports Player','(Tier 2 CODM Esports Player)']];
+  const w=mobile?600:1200,p=mobile?32:48,s=panel(w,mobile?780:450,'Beyond the code','Marketing Director of the UP Computer Science Guild, seasonal tutor (calculus and programming), freelance graphic designer (Pubmats and VFX), and competitive esports player (Tier 2 CODM Esports Player).');
+  const roles=[['01','Marketing Director','UP COMPUTER SCIENCE GUILD'],['02','Seasonal Tutor','(calculus and programming)'],['03','Freelance Graphic Designer','(Pubmats and VFX)'],['04','Competitive Esports Player','(Tier 2 CODM Esports Player)']];
   roles.forEach(([num,title,sub],i)=>{
-    const x=mobile?p:(i%2===0?p:660),y=mobile?60+i*150:65+Math.floor(i/2)*160;
+    const x=mobile?p:(i%2===0?p:660),y=mobile?60+i*178:65+Math.floor(i/2)*190;
+    const roleStart=s.parts.length;
     s.add(s.text(num,x,y,18,'mono',C.purple));
-    const end=words(s,title,x,y+42,mobile?34:32,mobile?536:490,'display',C.ivory,42);
-    if(sub)s.add(s.text(sub,x,end+32,mobile?18:16,'mono',C.cyan));
-    s.add(`<path d="M${x} ${y+104}h${mobile?536:490}" stroke="${C.silver}" stroke-opacity=".15"/>`);
+    const end=words(s,title,x,y+46,mobile?34:32,mobile?536:490,'display',C.ivory,42);
+    if(sub)s.add(s.text(sub,x,end+34,mobile?20:18,'mono',C.cyan));
+    s.add(`<path d="M${x} ${end+64}h${mobile?536:490}" stroke="${C.silver}" stroke-opacity=".15"/>`);
+    const role=s.parts.splice(roleStart).join('');s.add(stage(role,animated,{id:'role-'+i,duration:24,delay:i*.25,dx:i%2?10:-10,dy:0,min:.3}));
   });
   return finish(s,animated);
 }
@@ -78,7 +86,8 @@ function linkCard(mobile,title,subtitle,animated){
   s.add(`<rect x=".5" y=".5" width="${w-1}" height="109" fill="none" stroke="#8B5CF6" stroke-opacity=".25"/>`);
   label(s,title,p,45);
   s.add(s.text(subtitle,p,82,mobile?22:23,'mono',C.ivory));
-  s.add(s.text('->',w-p,65,26,'mono',C.cyan,0,false,'end'));
+  const arrow=s.text('->',w-p-8,65,26,'mono',C.cyan,0,false,'end');
+  s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="-8 0;0 0;8 0;0 0;-8 0" dur="5s" repeatCount="indefinite"/></g>`:arrow);
   return finish(s,animated);
 }
 function leetcode(mobile,animated){
@@ -103,10 +112,10 @@ function leetcode(mobile,animated){
     const x=mobile?p:660,y=(mobile?344:104)+i*(mobile?82:70),barW=mobile?536:492,color=[C.cyan,C.purple,C.red][i];
     s.add(s.text(name.toUpperCase(),x,y,18,'mono',color));
     s.add(s.text(`${d.solved} / ${d.available}`,x+barW,y,18,'mono',C.ivory,0,false,'end'));
-    s.add(`<path d="M${x} ${y+20}h${barW}" stroke="#1D2030" stroke-width="5"/><path d="M${x} ${y+20}h${barW*d.solved/d.available}" stroke="${color}" stroke-width="5"/>`);
+    s.add(`<path d="M${x} ${y+20}h${barW}" stroke="#1D2030" stroke-width="5"/><path d="M${x} ${y+20}h${barW*d.solved/d.available}" stroke="${color}" stroke-width="5" pathLength="100" stroke-dasharray="100">${animated?'<animate attributeName="stroke-dashoffset" values="100;0;0;100;100" keyTimes="0;.15;.86;.96;1" dur="17s" repeatCount="indefinite"/>':''}</path>`);
   });
   s.add(s.text('UPDATED '+data.updated+' UTC',p,h-25,16,'mono',C.silver));
-  if(animated){s.add(`<circle cx="${cx}" cy="${cy}" r="${r+12}" fill="none" stroke="${C.cyan}" stroke-opacity=".35" stroke-dasharray="12 ${2*Math.PI*(r+12)-12}"><animateTransform attributeName="transform" type="rotate" from="0 ${cx} ${cy}" to="360 ${cx} ${cy}" dur="16s" repeatCount="indefinite"/></circle>`);}
+  if(animated)for(let i=0;i<3;i++)s.add(`<rect x="${w-125+i*25}" y="27" width="9" height="9" fill="#8B5CF6"><animate attributeName="opacity" values=".15;1;.15;.15" keyTimes="0;.2;.4;1" dur="3s" begin="${i*.3}s" repeatCount="indefinite"/></rect>`);
   return finish(s,animated);
 }
 function write(stem,fn){

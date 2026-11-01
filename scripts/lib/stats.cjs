@@ -1,12 +1,12 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const {SVG,esc}=require('./svg.cjs');
-const {background,flow,glitch}=require('./motion.cjs');
+const {background,flow,stage,terminal}=require('./motion.cjs');
 const root=path.resolve(__dirname,'../..');
 const C={ink:'#09090F',ivory:'#F0E9DD',silver:'#C5C6D0',cyan:'#8EBBEE',purple:'#8B5CF6',red:'#EF7583'};
-function panel(w,h,title,desc,a){const s=new SVG(w,h,title,desc);s.add(`<rect width="${w}" height="${h}" fill="${C.ink}"/>`);s.add(background(w,h,a));return s;}
+function panel(w,h,title,desc,a){const s=new SVG(w,h,title,desc);s.add(`<rect width="${w}" height="${h}" fill="${C.ink}"/>`);s.add(background(w,h,false));return s;}
 function text(s,t,x,y,size=18,font='mono',color=C.silver,align='start'){s.add(s.text(String(t),x,y,size,font,color,0,false,align));}
-function end(s,a){s.add(flow(s.w,s.h,a));s.add(glitch(s,a));return s.finish();}
+function end(s,a){s.add(flow(s.w,s.h,false));return s.finish();}
 function read(name){return JSON.parse(fs.readFileSync(root+'/assets/data/'+name+'.json','utf8'));}
 function weekly(data){
   const weeks=new Map();
@@ -58,7 +58,7 @@ function activity(m,a){
   s.add(`<defs><linearGradient id="signal-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="${C.purple}" stop-opacity=".24"/><stop offset="1" stop-color="${C.purple}" stop-opacity=".01"/></linearGradient><linearGradient id="signal-line"><stop stop-color="${C.purple}"/><stop offset="1" stop-color="${C.cyan}"/></linearGradient></defs><path d="${d}L${right} ${bottom}H${left}Z" fill="url(#signal-fill)"/><path id="signal" d="${d}" fill="none" stroke="url(#signal-line)" stroke-width="2.5"/>`);
   points.forEach(([x,y],i)=>{s.add(`<circle cx="${x}" cy="${y}" r="${days[i].count===peak?5:2.5}" fill="${days[i].count===peak?C.ivory:C.purple}"><title>${days[i].date}: ${days[i].count} contributions</title></circle>`);if(i%10===0||i===30)text(s,days[i].date.slice(5),x,bottom+32,m?16:14,'mono',C.silver,i===30?'end':'start');});
   if(a){
-    s.add(`<path d="${d}" pathLength="100" fill="none" stroke="${C.ivory}" stroke-width="3" stroke-dasharray="5 95" stroke-opacity=".6"><animate attributeName="stroke-dashoffset" from="100" to="-100" dur="12s" repeatCount="indefinite"/></path>`);
+    s.add(`<path d="${d}" pathLength="100" fill="none" stroke="${C.ivory}" stroke-width="2.5" stroke-dasharray="100" stroke-opacity=".45"><animate attributeName="stroke-dashoffset" values="100;0;0;-100;100" keyTimes="0;.2;.76;.95;1" dur="18s" repeatCount="indefinite"/></path>`);
     const i=days.findIndex(d=>d.count===peak),[x,y]=points[i];
     s.add(`<circle cx="${x}" cy="${y}" r="5" fill="none" stroke="${C.cyan}"><animate attributeName="r" values="5;16" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values=".6;0" dur="3s" repeatCount="indefinite"/></circle>`);
   }
@@ -72,12 +72,20 @@ function monkeytype(m,a){
   data.personalBests.forEach((pb,i)=>{
     const x=m?p:p+i*550,y=m?105+i*175:108;
     text(s,pb.seconds+'S / PERSONAL BEST',x,y,18,'mono',C.purple);
+    const readoutStart=s.parts.length;
     text(s,pb.wpm.toFixed(2),x,y+69,64,'display',C.ivory);text(s,'WPM',x+255,y+68,20,'mono',C.cyan);
+    const readout=s.parts.splice(readoutStart).join('');
+    s.add(stage(readout,a,{id:'typing-readout-'+i,duration:21,delay:i*.2,dy:12,min:.5}));
     text(s,pb.accuracy.toFixed(2)+'% ACCURACY',x,y+104,18);
     const d=`M${x} ${y+133}H${x+80}l10 -10h80l10 10h110`;
     s.add(`<path d="${d}" stroke="${C.purple}" fill="none" stroke-opacity=".4"/>`);
-    if(a)s.add(`<circle r="3" fill="${C.cyan}"><animateMotion path="${d}" dur="${4+i}s" repeatCount="indefinite"/></circle>`);
+    if(a)s.add(`<path d="M${x+330} ${y+85}v22" stroke="${C.cyan}" stroke-width="2"><animate attributeName="opacity" values="1;0;1" calcMode="discrete" dur=".9s" repeatCount="indefinite"/></path>`);
   });
+  // Four decorative key switches: a typing rhythm, not additional test data.
+  for(let i=0;i<4;i++){
+    const x=(m?p:660)+i*42,y=m?452:270;
+    s.add(`<rect x="${x}" y="${y}" width="30" height="26" rx="3" fill="#11141F" stroke="${C.purple}" stroke-opacity=".5">${a?`<animate attributeName="fill" values="#11141F;#29425D;#11141F;#11141F" keyTimes="0;.1;.2;1" dur="2s" begin="${i*.18}s" repeatCount="indefinite"/>`:''}</rect>`);
+  }
   const y=m?510:315;
   text(s,`${data.completedTests} COMPLETED / ${data.startedTests} STARTED`,p,y,18,'mono',C.ivory);
   text(s,(data.timeTyping/60).toFixed(1)+' MIN TYPING',p,y+32,18,'mono',C.cyan);

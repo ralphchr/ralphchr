@@ -1,7 +1,7 @@
 const fs=require('node:fs');
 const root=require('node:path').resolve(__dirname,'../..');
 const {SVG,n}=require('./svg.cjs');
-const {flow,background,glitch}=require('./motion.cjs');
+const {flow,background,stage}=require('./motion.cjs');
 const projects=[
  {name:'RELAYA',domain:'COMMUNICATION / AI',stack:[['ai','AI'],['speech','Speech recognition'],['nlp','NLP']]},
  {name:'LazyFill',domain:'GOOGLE FORMS AUTOFILL EXTENSION',stack:[['react','React'],['typescript','TypeScript'],['extension','Manifest V3']]},
@@ -25,7 +25,7 @@ function build(mobile,animated=false){
  const width=mobile?600:1200,rowHeight=mobile?158:88,head=mobile?68:58,height=head+projects.length*rowHeight+8;
  const s=new SVG(width,height,'Selected projects — domain and technology index',projects.map(p=>p.name+': '+p.domain.toLowerCase()+'. '+(p.name==='RELAYA'?'Approach':'Built with')+': '+p.stack.map(x=>x[1]).join(', ')+'.').join(' '));
  s.add(`<rect width="${width}" height="${height}" fill="#09090F"/>`);
- s.add(background(width,height,animated));
+ s.add(background(width,height,false));
  s.add(`<path d="M${mobile?32:30} 0H${width-(mobile?32:30)}" stroke="#8B5CF6" stroke-width="2"/>`);
  s.add(s.text(mobile?'PROJECT INDEX / 01-'+String(projects.length).padStart(2,'0'):'PROJECT / DOMAIN',mobile?32:84,mobile?42:35,mobile?20:14,'mono','#C5C6D0',.6));
  if(!mobile)s.add(s.text('STACK / APPROACH',740,35,14,'mono','#C5C6D0',.6));
@@ -39,6 +39,7 @@ function build(mobile,animated=false){
  }
  projects.forEach((p,i)=>{
   const y=head+i*rowHeight;
+  const rowStart=s.parts.length;
   s.add(`<path d="M${mobile?32:30} ${y+rowHeight-1}H${width-(mobile?32:30)}" stroke="#C5C6D0" stroke-opacity=".16"/>`);
   if(mobile){
    s.add(s.text(String(i+1).padStart(2,'0'),32,y+38,18,'mono','#8B5CF6'));
@@ -55,8 +56,10 @@ function build(mobile,animated=false){
    p.stack.forEach(([slug,label])=>{x+=chip(slug,label,x,y+27)+chipGap;});
    if(x-chipGap>width-30)throw Error('Desktop chips exceed margin '+p.name);
   }
+  const row=s.parts.splice(rowStart).join('');
+  s.add(stage(row,animated,{id:'project-row-'+i,duration:20,delay:i*.16,dx:18,dy:0,min:.25}));
  });
- s.add(flow(width,height,animated));s.add(glitch(s,animated));
+ s.add(flow(width,height,animated));
  return s.finish();
 }
 
