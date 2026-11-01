@@ -146,7 +146,7 @@
 <source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-light.svg">
 <source media="(prefers-color-scheme: light)" srcset="./assets/contact-linkedin-animated-light.svg">
 <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin.svg">
-<img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: Ralph Christian Borbon" width="260">
+<img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: RALPH CHRISTIAN BORBON" width="260">
 </picture></a>
 <a href="mailto:borbon.rchr@gmail.com"><picture>
 <source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail-light.svg">
