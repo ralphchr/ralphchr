@@ -23,7 +23,7 @@ for(const project of projects)for(const [slug] of project.stack){
 }
 function build(mobile,animated=false){
  const width=mobile?600:1200,rowHeight=mobile?158:88,head=mobile?68:58,height=head+projects.length*rowHeight+8;
- const s=new SVG(width,height,'Selected projects — domain and technology index',projects.map(p=>p.name+': '+p.domain.toLowerCase()+'. '+(p.name==='RELAYA'?'Approach':'Built with')+': '+p.stack.map(x=>x[1]).join(', ')+'.').join(' '));
+ const s=new SVG(width,height,'Projects so far — domain and technology index',projects.map(p=>p.name+': '+p.domain.toLowerCase()+'. '+(p.name==='RELAYA'?'Approach':'Built with')+': '+p.stack.map(x=>x[1]).join(', ')+'.').join(' '));
  s.add(`<rect width="${width}" height="${height}" fill="#09090F"/>`);
  s.add(background(width,height,false));
  s.add(`<path d="M${mobile?32:30} 0H${width-(mobile?32:30)}" stroke="#8B5CF6" stroke-width="2"/>`);

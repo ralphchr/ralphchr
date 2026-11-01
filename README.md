@@ -21,7 +21,7 @@
     <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/selected-heading-mobile.svg">
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/selected-heading.svg">
     <source media="(max-width: 600px)" srcset="./assets/selected-heading-mobile-animated.svg">
-    <img src="./assets/selected-heading-animated.svg" alt="Selected work" width="100%">
+    <img src="./assets/selected-heading-animated.svg" alt="Projects so far" width="100%">
   </picture>
 </p>
 
@@ -105,6 +105,26 @@
 
 <p>
   <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/hackerrank-heading-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank-heading.svg">
+    <source media="(max-width: 600px)" srcset="./assets/hackerrank-heading-mobile-animated.svg">
+    <img src="./assets/hackerrank-heading-animated.svg" alt="On HackerRank / challenges and public track stats" width="100%">
+  </picture>
+</p>
+
+<p>
+  <a href="https://www.hackerrank.com/profile/ralphchr">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/hackerrank-mobile.svg">
+    <source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank.svg">
+    <source media="(max-width: 600px)" srcset="./assets/hackerrank-mobile-animated.svg">
+    <img src="./assets/hackerrank-animated.svg" alt="ralphchr on HackerRank: verified solved counts and ranks for Problem Solving, Python, and C." width="100%">
+  </picture>
+  </a>
+</p>
+
+<p>
+  <picture>
     <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-heading-mobile.svg">
     <source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype-heading.svg">
     <source media="(max-width: 600px)" srcset="./assets/monkeytype-heading-mobile-animated.svg">
@@ -151,7 +171,34 @@
 </p>
 
 <p>
-  <a href="https://www.facebook.com/ralphchrr"><img src="./assets/contact-facebook.svg" alt="Facebook: @ralphchrr" title="Facebook" width="56" height="56"></a>
-  <a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/"><img src="./assets/contact-linkedin.svg" alt="LinkedIn: Ralph Christian Borbon" title="LinkedIn" width="56" height="56"></a>
-  <a href="mailto:borbon.rchr@gmail.com"><img src="./assets/contact-gmail.svg" alt="Gmail: borbon.rchr@gmail.com" title="Gmail" width="56" height="56"></a>
+  <a href="https://www.facebook.com/ralphchrr">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-facebook-mobile.svg">
+      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook.svg">
+      <source media="(max-width: 600px)" srcset="./assets/contact-facebook-mobile-animated.svg">
+      <img src="./assets/contact-facebook-animated.svg" alt="Facebook: @ralphchrr" width="100%">
+    </picture>
+  </a>
+</p>
+
+<p>
+  <a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-linkedin-mobile.svg">
+      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin.svg">
+      <source media="(max-width: 600px)" srcset="./assets/contact-linkedin-mobile-animated.svg">
+      <img src="./assets/contact-linkedin-animated.svg" alt="LinkedIn: Ralph Christian Borbon" width="100%">
+    </picture>
+  </a>
+</p>
+
+<p>
+  <a href="mailto:borbon.rchr@gmail.com">
+    <picture>
+      <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-gmail-mobile.svg">
+      <source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail.svg">
+      <source media="(max-width: 600px)" srcset="./assets/contact-gmail-mobile-animated.svg">
+      <img src="./assets/contact-gmail-animated.svg" alt="Gmail: borbon.rchr@gmail.com" width="100%">
+    </picture>
+  </a>
 </p>

@@ -1,0 +1,29 @@
+{
+  "username": "ralphchr",
+  "profile": "https://www.hackerrank.com/profile/ralphchr",
+  "source": "https://www.hackerrank.com/rest/hackers/ralphchr/badges",
+  "updated": "2026-11-01",
+  "tracks": [
+    {
+      "name": "Problem Solving",
+      "type": "problem-solving",
+      "solved": 24,
+      "available": 563,
+      "rank": 479951
+    },
+    {
+      "name": "Python",
+      "type": "python",
+      "solved": 35,
+      "available": 115,
+      "rank": 251110
+    },
+    {
+      "name": "C",
+      "type": "c",
+      "solved": 10,
+      "available": 25,
+      "rank": 391690
+    }
+  ]
+}

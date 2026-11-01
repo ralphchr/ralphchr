@@ -93,4 +93,22 @@ function monkeytype(m,a){
   text(s,'UPDATED '+data.updated+' UTC',p,h-28,16);
   return end(s,a);
 }
-module.exports={consistency,activity,monkeytype,weekly};
+function hackerrank(m,a){
+  const data=read('hackerrank'),w=m?600:1200,p=m?32:48;
+  const rows=m?data.tracks.length:Math.ceil(data.tracks.length/3),h=132+rows*(m?210:244);
+  const s=panel(w,h,'HackerRank / ralphchr',data.tracks.map(t=>`${t.name}: ${t.solved} solved, track rank ${t.rank}`).join('. ')+`. Updated ${data.updated} UTC. Track totals are not summed because challenge sets can overlap.`,a);
+  text(s,'@RALPHCHR / HACKERRANK',p,44,18,'mono',C.cyan);
+  data.tracks.forEach((track,i)=>{
+    const x=m?p:p+(i%3)*375,y=100+(m?i:Math.floor(i/3))*(m?210:244),col=m?536:354;
+    const color=[C.cyan,C.purple,C.cyan][i%3];
+    text(s,track.name.toUpperCase(),x,y,18,'mono',color);
+    text(s,track.solved,x,y+65,60,'display',C.ivory);
+    text(s,'CHALLENGES SOLVED',x,y+101,16);
+    text(s,'RANK #'+track.rank.toLocaleString('en-US'),x,y+138,18,'mono',color);
+    s.add(`<path d="M${x} ${y+163}h${col}" stroke="${color}" stroke-opacity=".23"/>`);
+    if(a)s.add(`<path d="M${x} ${y+163}h${col}" stroke="${color}" stroke-width="2" pathLength="100" stroke-dasharray="16 84"><animate attributeName="stroke-dashoffset" values="100;0;-100" dur="${6+i}s" repeatCount="indefinite"/></path>`);
+  });
+  text(s,'UPDATED '+data.updated+' UTC / PUBLIC TRACK STATS',p,h-26,m?14:16);
+  return end(s,a);
+}
+module.exports={consistency,activity,monkeytype,hackerrank,weekly};
