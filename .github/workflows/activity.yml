@@ -2,7 +2,8 @@ name: Refresh profile statistics
 
 on:
   schedule:
-    - cron: '17 3 * * *'
+    # Every 12 hours: 11:17 AM and 11:17 PM in Asia/Manila.
+    - cron: '17 3,15 * * *'
   workflow_dispatch:
   push:
     paths:
