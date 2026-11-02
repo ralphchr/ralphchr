@@ -74,6 +74,17 @@ function beyond(mobile,animated){
   return s.finish();
 }
 function linkCard(mobile,title,subtitle,animated){
+  if(mobile){
+    const s=panel(600,112,title,subtitle),slug=title.toLowerCase();
+    s.add('<circle cx="53" cy="55" r="26" fill="none" stroke="#8B5CF6" stroke-opacity=".5"/><path d="M96 17h30" stroke="#8EBBEE" stroke-width="1.5"/>');
+    if(slug==='facebook')s.add('<g transform="translate(31 31) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#8EBBEE"/></g>');
+    if(slug==='linkedin')s.add(s.text('in',36,69,31,'display',C.cyan,-1));
+    if(slug==='gmail')s.add('<g transform="translate(31 33) scale(.55)"><path d="M15 24h50v33H15Z M15 25l25 19 25-19" fill="none" stroke="#8EBBEE" stroke-width="4" stroke-linejoin="round"/></g>');
+    s.add(s.text(title,96,49,31,'display',C.ivory));s.add(s.text(subtitle,96,82,21,'mono',C.silver));
+    const arrow='<path d="M540 69l22-22m-15 0h15v15" fill="none" stroke="#8EBBEE" stroke-width="1.5"/>';
+    s.add(animated?`<g>${arrow}<animateTransform attributeName="transform" type="translate" values="0 0;2 -2;0 0" calcMode="discrete" dur="3s" repeatCount="indefinite"/></g>`:arrow);
+    return s.finish();
+  }
   const s=panel(400,120,title,subtitle),slug=title.toLowerCase();
   s.add('<path d="M.5 .5H384L399.5 16V119.5H.5Z" fill="#09090F" stroke="none"/><circle cx="42" cy="61" r="25" fill="none" stroke="#8B5CF6" stroke-opacity=".5"/>');
   if(slug==='facebook')s.add('<g transform="translate(20 37) scale(.55)"><path d="M46 66V43h9l2-12H46v-6c0-4 1-6 6-6h6V8H48c-12 0-18 7-18 18v5h-8v12h8v23Z" fill="#8EBBEE"/></g>');
@@ -86,20 +97,23 @@ function linkCard(mobile,title,subtitle,animated){
   if(animated)s.add('<path d="M108 27h8" stroke="#EF7583"><animate attributeName="visibility" values="hidden;hidden;visible;hidden" keyTimes="0;.86;.89;1" calcMode="discrete" dur="4s" repeatCount="indefinite"/></path>');
   return s.finish();
 }
-function write(stem,fn){
+function write(stem,fn,desktopWidth){
   for(const mobile of [false,true])for(const animated of [false,true]){
     const file=stem+(mobile?'-mobile':'')+(animated?'-animated':'')+'.svg';
-    const svg=fn(mobile,animated);
+    let svg=fn(mobile,animated);
+    // No fixed HTML widths: picture sources keep compact desktop cards while
+    // phone SVGs take the available width through GitHub's max-width rule.
+    if(!mobile&&desktopWidth)svg=svg.replace(/width="([\d.]+)" height="([\d.]+)"/,(_,w,h)=>`width="${desktopWidth}" height="${+(h*desktopWidth/w).toFixed(3)}"`);
     fs.writeFileSync(path.join(root,'assets',file),svg);
     fs.writeFileSync(path.join(root,'assets',file.replace('.svg','-light.svg')),light(svg));
   }
 }
-write('leetcode',leetcode);
+write('leetcode-fit',leetcode,198);
 if(!process.argv.includes('--leetcode-only')){
-  write('consistency',consistency);
+  write('consistency-fit',consistency,198);
   write('activity',activity);
-  write('monkeytype',monkeytype);
-  write('hackerrank',hackerrank);
+  write('monkeytype-fit',monkeytype,198);
+  write('hackerrank-fit',hackerrank,198);
 }
 if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-only')){
   for(const animated of [false,true]){const svg=banner(false,0,animated),stem=root+'/assets/profile-banner'+(animated?'-animated':'');fs.writeFileSync(stem+'.svg',svg);fs.writeFileSync(stem+'-light.svg',light(svg));}
@@ -109,6 +123,6 @@ if(!process.argv.includes('--stats-only')&&!process.argv.includes('--leetcode-on
   write('beyond-code',beyond);
   const headings=[['selected-heading','','The build log','IDEAS GIVEN FORM'],['toolkit-heading','','Instruments of craft','CODE / SYSTEMS / DESIGN'],['github-heading','','Traces of progress','GITHUB / LEETCODE / HACKERRANK / MONKEYTYPE'],['connect-heading','','Open a channel','FIND ME ON THE OTHER SIDE']];
   for(const [stem,num,title,annotation] of headings)write(stem,(m,a)=>heading(m,a,num,title,annotation));
-  for(const [slug,title,sub] of [['facebook','Facebook','@ralphchrr'],['linkedin','LinkedIn','RALPH CHRISTIAN BORBON'],['gmail','Gmail','borbon.rchr@gmail.com']])write('contact-'+slug+(slug==='linkedin'?'-name':''),(m,a)=>linkCard(m,title,sub,a));
+  for(const [slug,title,sub] of [['facebook','Facebook','@ralphchrr'],['linkedin','LinkedIn','RALPH CHRISTIAN BORBON'],['gmail','Gmail','borbon.rchr@gmail.com']])write('contact-'+slug+(slug==='linkedin'?'-name':'')+'-fit',(m,a)=>linkCard(m,title,sub,a),260);
 }
 console.log('Built outlined profile artwork, native SVG motion and reduced-motion versions.');

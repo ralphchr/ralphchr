@@ -15,9 +15,29 @@ function card(service,desc){
   return s;
 }
 function stamp(s,date){text(s,'as of '+date+' UTC',16,244,12);return s.finish();}
+// Phone cards use a wide, shallow composition at the full README width.
+// Intrinsic SVG dimensions, rather than CSS, control the linked images in GitHub.
+function phoneCard(service,desc){
+  const s=new SVG(600,230,service+' / public statistics',desc);
+  text(s,service,32,31,23,'display',C.paper);
+  s.add('<path d="M32 44H568M244 65V211" stroke="#C5C6D0" stroke-opacity=".14"/><path d="M32 44h42" stroke="#8EBBEE"/>');
+  return s;
+}
+function phoneStamp(s,date){text(s,'as of '+date+' UTC',32,211,14);return s.finish();}
 function consistency(m,a){
   const data=read('github'),week=weekly(data),days=data.days.slice(-31);
   const total=data.days.reduce((n,d)=>n+d.count,0),recent=days.reduce((n,d)=>n+d.count,0);
+  if(m){
+    const s=phoneCard('GitHub',`${total} calendar-window contributions; ${recent} in 31 days. ${week.current} week streak, ${week.longest} week best.`);
+    text(s,total,32,113,56,'display',C.paper);
+    text(s,'CONTRIBUTIONS',32,146,17,'mono',C.cyan);text(s,'CALENDAR WINDOW',32,173,15);
+    const peak=Math.max(1,...days.map(d=>d.count));
+    days.forEach((d,i)=>{const h=Math.max(2,d.count/peak*67);s.add(`<rect x="${264+i*9.8}" y="${141-h}" width="6.4" height="${h}" fill="${d.count===peak?C.purple:C.cyan}" fill-opacity="${d.count?.9:.18}"><title>${d.date}: ${d.count}</title></rect>`);});
+    text(s,recent+' in 31 days',264,174,21,'mono',C.cyan);
+    text(s,week.current+'W streak / '+week.longest+'W best',264,206,19);
+    if(a)s.add(`<rect x="264" y="146" width="9" height="2" fill="${C.cyan}"><animate attributeName="x" values="264;560;264" calcMode="discrete" dur="3s" repeatCount="indefinite"/></rect>`);
+    return phoneStamp(s,data.through);
+  }
   const s=card('github',`${total} contributions during ${data.days[0].date} to ${data.through}. ${recent} in the last 31 days. Current weekly streak ${week.current}, best ${week.longest} within this window.`);
   text(s,total,16,85,48,'display',C.paper);
   text(s,'contributions / calendar',16,111,14);
@@ -29,7 +49,21 @@ function consistency(m,a){
   return stamp(s,data.through);
 }
 function leetcode(m,a){
-  const data=read('leetcode'),s=card('leetcode',`${data.solved} solved; rank ${data.ranking}. Difficulty bars show the share of solved problems, not completion of the full problem set.`);
+  const data=read('leetcode'),desc=`${data.solved} solved; rank ${data.ranking}. Difficulty bars show the share of solved problems, not completion of the full problem set.`;
+  if(m){
+    const s=phoneCard('LeetCode',desc);
+    text(s,data.solved,32,113,56,'display',C.paper);text(s,'SOLVED',32,146,17,'mono',C.cyan);
+    text(s,'rank #'+data.ranking.toLocaleString('en-US'),32,173,14);
+    Object.entries(data.difficulties).forEach(([name,d],i)=>{
+      const y=87+i*48,color=[C.cyan,C.purple,C.red][i],x=354+158*d.solved/Math.max(1,data.solved);
+      text(s,name[0].toUpperCase()+name.slice(1),264,y,19,'mono',color);
+      s.add(`<path d="M354 ${y-6}H512" stroke="${color}" stroke-opacity=".18"/><path d="M354 ${y-6}H${x}" stroke="${color}" stroke-width="2"/><path d="M${x} ${y-10}l4 4-4 4-4-4Z" fill="${color}"/>`);
+      text(s,d.solved,568,y,22,'mono',C.paper,'end');
+    });
+    if(a)s.add(`<rect x="220" y="133" width="3" height="17" fill="${C.purple}"><animate attributeName="visibility" values="visible;hidden;visible" calcMode="discrete" dur="2s" repeatCount="indefinite"/></rect>`);
+    return phoneStamp(s,data.updated);
+  }
+  const s=card('leetcode',desc);
   text(s,data.solved,16,85,48,'display',C.paper);text(s,'solved',272,83,18,'mono',C.silver,'end');
   Object.entries(data.difficulties).forEach(([name,d],i)=>{
     const y=127+i*30,color=[C.cyan,C.purple,C.red][i];
@@ -43,7 +77,19 @@ function leetcode(m,a){
   return stamp(s,data.updated);
 }
 function hackerrank(m,a){
-  const data=read('hackerrank'),s=card('hackerrank',data.tracks.map(t=>`${t.name}: ${t.solved} solved; rank ${t.rank}`).join('. ')+'. Track totals are not summed.');
+  const data=read('hackerrank'),desc=data.tracks.map(t=>`${t.name}: ${t.solved} solved; rank ${t.rank}`).join('. ')+'. Track totals are not summed.';
+  if(m){
+    const s=phoneCard('HackerRank',desc);
+    text(s,data.tracks.length,32,113,56,'display',C.paper);text(s,'TRACKS',32,146,17,'mono',C.cyan);text(s,'SOLVED / TRACK',32,173,15);
+    data.tracks.slice(0,3).forEach((t,i)=>{
+      const y=87+i*48;
+      text(s,t.name,264,y,18,'mono',i===1?C.purple:C.cyan);text(s,t.solved,568,y,27,'display',C.paper,'end');
+      s.add(`<path d="M264 ${y+12}H568" stroke="#C5C6D0" stroke-opacity=".1"/>`);
+    });
+    if(a)s.add('<path d="M541 209h24m-6-6 6 6-6 6" fill="none" stroke="#8EBBEE"><animateTransform attributeName="transform" type="translate" values="0 0;2 0;0 0" calcMode="discrete" dur="2s" repeatCount="indefinite"/></path>');
+    return phoneStamp(s,data.updated);
+  }
+  const s=card('hackerrank',desc);
   text(s,data.tracks.length,16,85,48,'display',C.paper);text(s,'tracks',65,83,18);
   data.tracks.slice(0,3).forEach((t,i)=>{
     const y=129+i*31,color=i===1?C.purple:C.cyan;
@@ -56,7 +102,16 @@ function hackerrank(m,a){
 }
 function monkeytype(m,a){
   const data=read('monkeytype'),best=data.personalBests[0],other=data.personalBests[1];
-  const s=card('monkeytype',data.personalBests.map(p=>`${p.seconds}s English personal best: ${p.wpm} WPM, ${p.accuracy}% accuracy`).join('. ')+`. ${data.completedTests} completed tests.`);
+  const desc=data.personalBests.map(p=>`${p.seconds}s English personal best: ${p.wpm} WPM, ${p.accuracy}% accuracy`).join('. ')+`. ${data.completedTests} completed tests.`;
+  if(m){
+    const s=phoneCard('Monkeytype',desc);
+    text(s,best.wpm.toFixed(2),32,113,46,'display',C.paper);text(s,'WPM / '+best.seconds+'s PB',32,146,17,'mono',C.cyan);text(s,best.accuracy.toFixed(2)+'% accuracy',32,173,16);
+    if(other){text(s,other.seconds+'s PB',264,82,19,'mono',C.purple);text(s,other.wpm.toFixed(2)+' WPM',568,82,23,'display',C.paper,'end');text(s,other.accuracy.toFixed(2)+'% accuracy',264,115,19);}
+    text(s,data.completedTests+' completed tests',264,161,19);text(s,(data.timeTyping/60).toFixed(1)+' min typing',264,194,19);
+    if(a)s.add('<path d="M230 80v35" stroke="#8EBBEE" stroke-width="2"><animate attributeName="visibility" values="visible;hidden;visible" calcMode="discrete" dur=".8s" repeatCount="indefinite"/></path>');
+    return phoneStamp(s,data.updated);
+  }
+  const s=card('monkeytype',desc);
   text(s,best.wpm.toFixed(2),16,85,43,'display',C.paper);text(s,'WPM',226,83,18,'mono',C.cyan);
   text(s,best.seconds+'s PB / '+best.accuracy.toFixed(2)+'% acc',16,116,14);
   if(other){text(s,other.seconds+'s PB',16,155,14,'mono',C.purple);text(s,other.wpm.toFixed(2)+' WPM',272,155,18,'display',C.paper,'end');text(s,other.accuracy.toFixed(2)+'% accuracy',16,179,14);}

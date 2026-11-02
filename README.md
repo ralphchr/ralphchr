@@ -75,30 +75,46 @@
 <img src="./assets/github-heading-animated.svg" alt="Traces of progress / GitHub, LeetCode, HackerRank, Monkeytype" width="100%">
 </picture></p>
 
-<p align="center">
+<p>
 <a href="https://github.com/ralphchr"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/consistency-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/consistency-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/consistency.svg">
-<img src="./assets/consistency-animated.svg" alt="GitHub: calendar-window contributions, last 31 days, and weekly streaks." width="198">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/consistency-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/consistency-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/consistency-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/consistency-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/consistency-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/consistency-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/consistency-fit-mobile-animated.svg">
+<img src="./assets/consistency-fit-animated.svg" alt="GitHub: calendar-window contributions, last 31 days, and weekly streaks.">
 </picture></a>
 <a href="https://leetcode.com/u/ralphchr/"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/leetcode-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/leetcode-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode.svg">
-<img src="./assets/leetcode-animated.svg" alt="LeetCode: solved problems, difficulty mix, and global rank." width="198">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/leetcode-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/leetcode-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/leetcode-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/leetcode-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/leetcode-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/leetcode-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/leetcode-fit-mobile-animated.svg">
+<img src="./assets/leetcode-fit-animated.svg" alt="LeetCode: solved problems, difficulty mix, and global rank.">
 </picture></a>
 <a href="https://www.hackerrank.com/profile/ralphchr"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/hackerrank-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/hackerrank-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank.svg">
-<img src="./assets/hackerrank-animated.svg" alt="HackerRank: track count and verified per-track solved counts." width="198">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/hackerrank-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/hackerrank-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/hackerrank-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/hackerrank-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/hackerrank-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/hackerrank-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/hackerrank-fit-mobile-animated.svg">
+<img src="./assets/hackerrank-fit-animated.svg" alt="HackerRank: track count and verified per-track solved counts.">
 </picture></a>
 <a href="https://monkeytype.com/profile/ralphchr"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/monkeytype-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/monkeytype-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype.svg">
-<img src="./assets/monkeytype-animated.svg" alt="Monkeytype: public English 15s and 30s personal bests, accuracy and typing time." width="198">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/monkeytype-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/monkeytype-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/monkeytype-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/monkeytype-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/monkeytype-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/monkeytype-fit-mobile-animated.svg">
+<img src="./assets/monkeytype-fit-animated.svg" alt="Monkeytype: public English 15s and 30s personal bests, accuracy and typing time.">
 </picture></a>
 </p>
 
@@ -135,23 +151,35 @@
 <img src="./assets/connect-heading-animated.svg" alt="Open a channel / find me on the other side" width="100%">
 </picture></p>
 
-<p align="center">
+<p>
 <a href="https://www.facebook.com/ralphchrr"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/contact-facebook-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook.svg">
-<img src="./assets/contact-facebook-animated.svg" alt="Facebook: @ralphchrr" width="260">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-facebook-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/contact-facebook-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/contact-facebook-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-facebook-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-facebook-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/contact-facebook-fit-mobile-animated.svg">
+<img src="./assets/contact-facebook-fit-animated.svg" alt="Facebook: @ralphchrr">
 </picture></a>
 <a href="https://www.linkedin.com/in/ralph-christian-borbon-5923a2356/"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-name-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/contact-linkedin-name-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-name.svg">
-<img src="./assets/contact-linkedin-name-animated.svg" alt="LinkedIn: RALPH CHRISTIAN BORBON" width="260">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-linkedin-name-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-name-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/contact-linkedin-name-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/contact-linkedin-name-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-linkedin-name-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-linkedin-name-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/contact-linkedin-name-fit-mobile-animated.svg">
+<img src="./assets/contact-linkedin-name-fit-animated.svg" alt="LinkedIn: RALPH CHRISTIAN BORBON">
 </picture></a>
 <a href="mailto:borbon.rchr@gmail.com"><picture>
-<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail-light.svg">
-<source media="(prefers-color-scheme: light)" srcset="./assets/contact-gmail-animated-light.svg">
-<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail.svg">
-<img src="./assets/contact-gmail-animated.svg" alt="Gmail: borbon.rchr@gmail.com" width="260">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-gmail-fit-mobile-light.svg">
+<source media="(prefers-color-scheme: light) and (prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail-fit-light.svg">
+<source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="./assets/contact-gmail-fit-mobile-animated-light.svg">
+<source media="(prefers-color-scheme: light)" srcset="./assets/contact-gmail-fit-animated-light.svg">
+<source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/contact-gmail-fit-mobile.svg">
+<source media="(prefers-reduced-motion: reduce)" srcset="./assets/contact-gmail-fit.svg">
+<source media="(max-width: 600px)" srcset="./assets/contact-gmail-fit-mobile-animated.svg">
+<img src="./assets/contact-gmail-fit-animated.svg" alt="Gmail: borbon.rchr@gmail.com">
 </picture></a>
 </p>

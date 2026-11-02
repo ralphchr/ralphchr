@@ -12,11 +12,13 @@ Technology icons come from [Simple Icons 16.0.0](https://github.com/simple-icons
 
 “The build log” contains all six documented projects in their established order, with LazyFill below RELAYA. Descriptions and stacks come from the portfolio, resume, direct user updates and LazyFill source. RELAYA shows its documented AI approach because no implementation language was provided. Unavailable project links are omitted. Previously supplied logos and game screens remain under `projects/` as unused references.
 
-“Instruments of craft” groups the same language, development, security and design icons in a denser grid. “Traces of progress” groups four independently linked, 198px-wide public-stat cards; they wrap naturally on smaller viewports. A shallow contribution chart sits beneath the cards. No native Markdown table or custom CSS is required.
+“Instruments of craft” groups the same language, development, security and design icons in a denser grid. “Traces of progress” groups four independently linked public-stat cards. Desktop SVGs have an intrinsic width of 198px; below 600px, picture sources select full-width 600 × 230 compositions with the main metric beside the details. A shallow contribution chart sits beneath the cards. No native Markdown table or custom CSS is required.
 
 The large repeated-name biography is replaced with a compact continuation below the banner: “UP CEBU . COMPUTER SCIENCE - II,” a brief monospaced manifesto, and interests. The full name appears in the banner. “Parallel pursuits” compresses the four roles into one desktop row and two columns on phones: UPCSG Marketing Director; seasonal tutor in calculus/programming; freelance graphic designer for Pubmats/VFX; competitive Tier 2 CODM esports player. All role details are supplied directly by Ralph.
 
-“Open a channel” uses original architectural link plates: cut corners, circular icon insets, fine cyan rules and diagonal link arrows. Filled command bars and shell-command captions from the supplied layout reference are not used. At 260px wide, Facebook, LinkedIn and Gmail fit one desktop row and wrap on phones. The destinations and order remain unchanged; Gmail links to `mailto:borbon.rchr@gmail.com`.
+“Open a channel” uses original architectural link plates: circular icon insets, fine cyan rules and diagonal link arrows. Filled command bars and shell-command captions from the supplied layout reference are not used. Facebook, LinkedIn and Gmail use intrinsic 260px desktop widths and full-width 600 × 112 phone compositions. The destinations and order remain unchanged; Gmail links to `mailto:borbon.rchr@gmail.com`.
+
+Linked cards have no fixed HTML width or height. Their SVG intrinsic dimensions and viewBox let GitHub's image sizing preserve proportions, use the available phone width, and retain the compact desktop rows. The active card filenames use `-fit` so cached artwork with the former dimensions cannot override the new layout. Every layout has both palettes and a reduced-motion version; the daily stats workflow regenerates these same files.
 
 ## Animation and accessibility
 
