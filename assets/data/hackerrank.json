@@ -9,21 +9,21 @@
       "type": "problem-solving",
       "solved": 24,
       "available": 563,
-      "rank": 480029
+      "rank": 480039
     },
     {
       "name": "Python",
       "type": "python",
       "solved": 35,
       "available": 115,
-      "rank": 251163
+      "rank": 251166
     },
     {
       "name": "C",
       "type": "c",
       "solved": 10,
       "available": 25,
-      "rank": 391768
+      "rank": 391778
     }
   ]
 }
