@@ -7,23 +7,30 @@
     {
       "name": "Problem Solving",
       "type": "problem-solving",
-      "solved": 24,
+      "solved": 28,
       "available": 563,
-      "rank": 480039
+      "rank": 385831
+    },
+    {
+      "name": "C++",
+      "type": "cpp",
+      "solved": 19,
+      "available": 44,
+      "rank": 90719
     },
     {
       "name": "Python",
       "type": "python",
       "solved": 35,
       "available": 115,
-      "rank": 251166
+      "rank": 251173
     },
     {
       "name": "C",
       "type": "c",
-      "solved": 10,
+      "solved": 16,
       "available": 25,
-      "rank": 391778
+      "rank": 199946
     }
   ]
 }
