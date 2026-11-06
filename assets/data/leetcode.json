@@ -2,16 +2,16 @@
   "username": "ralphchr",
   "profile": "https://leetcode.com/u/ralphchr/",
   "source": "https://leetcard.jacoblin.cool/ralphchr?animation=false",
-  "updated": "2026-11-05",
-  "solved": 103,
-  "ranking": 1760464,
+  "updated": "2026-11-06",
+  "solved": 109,
+  "ranking": 1594477,
   "difficulties": {
     "easy": {
-      "solved": 87,
+      "solved": 91,
       "available": 975
     },
     "medium": {
-      "solved": 12,
+      "solved": 14,
       "available": 2139
     },
     "hard": {
