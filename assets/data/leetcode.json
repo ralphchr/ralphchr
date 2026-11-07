@@ -3,20 +3,20 @@
   "profile": "https://leetcode.com/u/ralphchr/",
   "source": "https://leetcard.jacoblin.cool/ralphchr?animation=false",
   "updated": "2026-11-07",
-  "solved": 109,
-  "ranking": 1594477,
+  "solved": 110,
+  "ranking": 1594992,
   "difficulties": {
     "easy": {
       "solved": 91,
       "available": 975
     },
     "medium": {
-      "solved": 14,
-      "available": 2139
+      "solved": 15,
+      "available": 2142
     },
     "hard": {
       "solved": 4,
-      "available": 987
+      "available": 988
     }
   }
 }
