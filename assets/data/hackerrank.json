@@ -2,14 +2,14 @@
   "username": "ralphchr",
   "profile": "https://www.hackerrank.com/profile/ralphchr",
   "source": "https://www.hackerrank.com/rest/hackers/ralphchr/badges",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "tracks": [
     {
       "name": "Problem Solving",
       "type": "problem-solving",
       "solved": 28,
       "available": 563,
-      "rank": 386764
+      "rank": 386786
     },
     {
       "name": "C++",
@@ -23,14 +23,14 @@
       "type": "python",
       "solved": 35,
       "available": 115,
-      "rank": 252567
+      "rank": 252584
     },
     {
       "name": "C",
       "type": "c",
       "solved": 16,
       "available": 25,
-      "rank": 200588
+      "rank": 200620
     }
   ]
 }
