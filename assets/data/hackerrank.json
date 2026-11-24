@@ -9,28 +9,28 @@
       "type": "problem-solving",
       "solved": 28,
       "available": 563,
-      "rank": 386878
+      "rank": 386889
     },
     {
       "name": "C++",
       "type": "cpp",
       "solved": 19,
       "available": 44,
-      "rank": 90922
+      "rank": 90927
     },
     {
       "name": "Python",
       "type": "python",
       "solved": 35,
       "available": 115,
-      "rank": 252709
+      "rank": 252737
     },
     {
       "name": "C",
       "type": "c",
       "solved": 16,
       "available": 25,
-      "rank": 200759
+      "rank": 200795
     }
   ]
 }
