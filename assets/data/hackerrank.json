@@ -9,7 +9,7 @@
       "type": "problem-solving",
       "solved": 28,
       "available": 563,
-      "rank": 386977
+      "rank": 386997
     },
     {
       "name": "C++",
@@ -23,14 +23,14 @@
       "type": "python",
       "solved": 35,
       "available": 115,
-      "rank": 252936
+      "rank": 252961
     },
     {
       "name": "C",
       "type": "c",
       "solved": 16,
       "available": 25,
-      "rank": 201030
+      "rank": 201069
     }
   ]
 }
